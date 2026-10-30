@@ -16,7 +16,8 @@ O **Hermes 3.0** é a unificação do motor de alta concorrência **Hermes 2.0**
    - Manifesto estruturado em JSON pronto para embedding vetorial em [`manifests/skills_manifest.json`](manifests/skills_manifest.json).
 2. **Mapeamento e Dossiê Completo do Client L2:**
    - Monorepo Rust (2024 Edition) com 4.589 arquivos técnicos catalogados em [`manifests/client_l2_index.json`](manifests/client_l2_index.json).
-   - Dossiê arquitetural detalhando todas as 11 crates, 2 apps e parsers UE2 em [`docs/CLIENT_L2_KNOWLEDGE_BASE.md`](docs/CLIENT_L2_KNOWLEDGE_BASE.md).
+   - Dossiê arquitetural detalhando as **33 crates**, os **3 executáveis** (`l2-client`, `l2-studio`, `l2encdec`), os parsers UE2, o pipeline de renderização (6 passos), o handshake de rede C6 (Protocol 746) e as 24 ferramentas de engenharia reversa em [`docs/CLIENT_L2_KNOWLEDGE_BASE.md`](docs/CLIENT_L2_KNOWLEDGE_BASE.md).
+   - Nota de revisão: o `README.md` do `client-l2` menciona "11 crates", mas o disco declara 33 — o dossiê reflete o estado real verificado em disco.
 3. **Especificação de Porte do Maestro para Kotlin:**
    - Eliminação de dependência de Node.js em runtime.
    - Mapeamento detalhado dos módulos em [`docs/MAESTRO_PORT_SPEC.md`](docs/MAESTRO_PORT_SPEC.md).
