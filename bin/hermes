@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Hermes 3.0 Launcher
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+JAR_PATH="$SCRIPT_DIR/dist/hermes.jar"
+
+if [ ! -f "$JAR_PATH" ]; then
+    echo "❌ Erro: hermes.jar não encontrado em $JAR_PATH. Execute 'gradle shadowJar' primeiro."
+    exit 1
+fi
+
+exec java -jar "$JAR_PATH" "$@"
