@@ -51,6 +51,10 @@ fun main(args: Array<String>) {
             println("🛡️ Verificação de Governança para '$path': $decision")
         }
 
+        "--verify-l2" -> {
+            br.com.hermes.project.ProjectVerifier.verifyClientL2()
+        }
+
         "--simulate-delivery" -> {
             val proof = ResolutionEngine.verifyDelivery(
                 taskId = "task-poc-001",
