@@ -64,6 +64,61 @@ fun main(args: Array<String>) {
             println("   • Arquivos: ${proof.modifiedFiles}")
         }
 
+        "--exec" -> {
+            val taskDesc = args.getOrNull(1) ?: run {
+                println("❌ Erro: informe a descrição da tarefa. Ex: --exec \"ajustar decodificador de pacotes C6\"")
+                return
+            }
+            println("🤖 Iniciando AgentPool (3 Workers Concorrentes em Coroutines)...")
+            println("📌 Tarefa recebida: '$taskDesc'")
+
+            val pool = br.com.hermes.agent.AgentPool()
+            kotlinx.coroutines.runBlocking {
+                val t0 = System.currentTimeMillis()
+                val task = br.com.hermes.agent.AgentTask(
+                    taskId = "task-" + System.currentTimeMillis().toString().takeLast(6),
+                    description = taskDesc
+                )
+                val result = pool.executeTask(task)
+                val elapsed = System.currentTimeMillis() - t0
+
+                println("\n🏁 Execução concluída em ${elapsed}ms!")
+                println("   • Worker Responsável: ${result.agentId}")
+                println("   • Sucesso: ${result.success}")
+                println("   • Tentativas no TDD Loop: ${result.attempts}")
+                println("   • Contextos RAG Injetados:")
+                result.contextInjected.forEach { println("     $it") }
+                println("   • Proof Bundle Status: ${result.proofBundle.status}")
+                println("   • Arquivos Modificados: ${result.proofBundle.modifiedFiles}")
+                println("   • Notas da Entrega: ${result.proofBundle.notes}")
+                println("\n📊 Estado do Blackboard Compartilhado:")
+                println(pool.blackboard.getFormattedSummary())
+            }
+        }
+
+        "--batch-exec" -> {
+            println("⚡ Disparando lote de tarefas paralelas no AgentPool...")
+            val pool = br.com.hermes.agent.AgentPool()
+            val tasks = listOf(
+                br.com.hermes.agent.AgentTask("T-01", "ajustar criptografia blowfish do login", "client-l2-code"),
+                br.com.hermes.agent.AgentTask("T-02", "verificar colisão e linecheck no mapa", "interlude-dll-forensics"),
+                br.com.hermes.agent.AgentTask("T-03", "revisar bindings ffi do lua", "skills")
+            )
+
+            kotlinx.coroutines.runBlocking {
+                val t0 = System.currentTimeMillis()
+                val results = pool.executeBatch(tasks)
+                val elapsed = System.currentTimeMillis() - t0
+
+                println("\n🏁 Lote de ${results.size} tarefas finalizado em ${elapsed}ms concorrentes!")
+                for (r in results) {
+                    println("   • [${r.taskId}] Worker: ${r.agentId} | Status: ${r.proofBundle.status} | Sucesso: ${r.success}")
+                }
+                println("\n📊 Estado do Blackboard Compartilhado:")
+                println(pool.blackboard.getFormattedSummary())
+            }
+        }
+
         else -> {
             println("Comando não reconhecido: ${args[0]}")
             printHelp()
