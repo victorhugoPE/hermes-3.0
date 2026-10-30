@@ -1,0 +1,23 @@
+# Build & Run
+target/
+build/
+.gradle/
+dist/
+*.class
+*.jar
+
+# IDEs & System
+.idea/
+*.iml
+.DS_Store
+.vscode/
+
+# Vector Indexes (Binários gerados)
+*.tv
+*.bin
+*.dat
+
+# Secrets (NUNCA COMITAR)
+.env
+*.key
+*.pem

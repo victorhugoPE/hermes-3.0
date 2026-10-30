@@ -1,0 +1,1712 @@
+[
+  {
+    "name": "accessibility",
+    "description": "Design, implement, and audit inclusive digital products using WCAG 2.2 Level AA standards. Use this skill to generate semantic ARIA for Web and accessibility traits for Web and Native platforms (iOS/Android).",
+    "origin": "ECC",
+    "path": "~/.claude/skills/accessibility/SKILL.md"
+  },
+  {
+    "name": "agent-architecture-audit",
+    "description": "Full-stack diagnostic for agent and LLM applications. Audits the 12-layer agent stack for wrapper regression, memory pollution, tool discipline failures, hidden repair loops, and rendering corruption. Produces severity-ranked findings with code-first fixes. Essential for developers building agent applications, autonomous loops, or any LLM-powered feature.",
+    "origin": "oh-my-agent-check",
+    "path": "~/.claude/skills/agent-architecture-audit/SKILL.md"
+  },
+  {
+    "name": "agent-eval",
+    "description": "Head-to-head comparison of coding agents (Claude Code, Aider, Codex, etc.) on custom tasks with pass rate, cost, time, and consistency metrics",
+    "origin": "ECC",
+    "path": "~/.claude/skills/agent-eval/SKILL.md"
+  },
+  {
+    "name": "agent-harness-construction",
+    "description": "Design and optimize AI agent action spaces, tool definitions, and observation formatting for higher completion rates.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/agent-harness-construction/SKILL.md"
+  },
+  {
+    "name": "agent-introspection-debugging",
+    "description": "Structured self-debugging workflow for AI agent failures using capture, diagnosis, contained recovery, and introspection reports.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/agent-introspection-debugging/SKILL.md"
+  },
+  {
+    "name": "agent-payment-x402",
+    "description": "Add x402 payment execution to AI agents with per-task budgets, spending controls, and non-custodial wallets. Supports Base through agentwallet-sdk and X Layer through OKX Payments / OKX Agent Payments Protocol.",
+    "origin": "community",
+    "path": "~/.claude/skills/agent-payment-x402/SKILL.md"
+  },
+  {
+    "name": "agent-self-evaluation",
+    "description": "Use after completing any non-trivial task. The agent self-rates its output on 5 axes — accuracy, completeness, clarity, actionability, conciseness — with concrete evidence per criterion. Produces a structured 1-5 scorecard with specific improvement suggestions.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/agent-self-evaluation/SKILL.md"
+  },
+  {
+    "name": "agent-sort",
+    "description": "Build an evidence-backed ECC install plan for a specific repo by sorting skills, commands, rules, hooks, and extras into DAILY vs LIBRARY buckets using parallel repo-aware review passes. Use when ECC should be trimmed to what a project actually needs instead of loading the full bundle.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/agent-sort/SKILL.md"
+  },
+  {
+    "name": "agentic-engineering",
+    "description": "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/agentic-engineering/SKILL.md"
+  },
+  {
+    "name": "agentic-os",
+    "description": "Build persistent multi-agent operating systems on Claude Code. Covers kernel architecture, specialist agents, slash commands, file-based memory, scheduled automation, and state management without external databases.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/agentic-os/SKILL.md"
+  },
+  {
+    "name": "ai-first-engineering",
+    "description": "Engineering operating model for teams where AI agents generate a large share of implementation output.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ai-first-engineering/SKILL.md"
+  },
+  {
+    "name": "ai-regression-testing",
+    "description": "Regression testing strategies for AI-assisted development. Sandbox-mode API testing without database dependencies, automated bug-check workflows, and patterns to catch AI blind spots where the same model writes and reviews code.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ai-regression-testing/SKILL.md"
+  },
+  {
+    "name": "android-clean-architecture",
+    "description": "Clean Architecture patterns for Android and Kotlin Multiplatform projects — module structure, dependency rules, UseCases, Repositories, and data layer patterns.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/android-clean-architecture/SKILL.md"
+  },
+  {
+    "name": "angular-developer",
+    "description": "Generates Angular code and provides architectural guidance. Trigger when creating projects, components, or services, or for best practices on reactivity (signals, linkedSignal, resource), forms, dependency injection, routing, SSR, accessibility (ARIA), animations, styling (component styles, Tailwind CSS), testing, or CLI tooling.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/angular-developer/SKILL.md"
+  },
+  {
+    "name": "api-connector-builder",
+    "description": "Build a new API connector or provider by matching the target repo's existing integration pattern exactly. Use when adding one more integration without inventing a second architecture.",
+    "origin": "ECC direct-port adaptation",
+    "path": "~/.claude/skills/api-connector-builder/SKILL.md"
+  },
+  {
+    "name": "api-design",
+    "description": "REST API design patterns including resource naming, status codes, pagination, filtering, error responses, versioning, and rate limiting for production APIs.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/api-design/SKILL.md"
+  },
+  {
+    "name": "architecture-decision-records",
+    "description": "Capture architectural decisions made during Claude Code sessions as structured ADRs. Auto-detects decision moments, records context, alternatives considered, and rationale. Maintains an ADR log so future developers understand why the codebase is shaped the way it is.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/architecture-decision-records/SKILL.md"
+  },
+  {
+    "name": "article-writing",
+    "description": "Write articles, guides, blog posts, tutorials, newsletter issues, and other long-form content in a distinctive voice derived from supplied examples or brand guidance. Use when the user wants polished written content longer than a paragraph, especially when voice consistency, structure, and credibility matter.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/article-writing/SKILL.md"
+  },
+  {
+    "name": "automation-audit-ops",
+    "description": "Evidence-first automation inventory and overlap audit workflow for ECC. Use when the user wants to know which jobs, hooks, connectors, MCP servers, or wrappers are live, broken, redundant, or missing before fixing anything.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/automation-audit-ops/SKILL.md"
+  },
+  {
+    "name": "autonomous-agent-harness",
+    "description": "Transform Claude Code into a fully autonomous agent system with persistent memory, scheduled operations, computer use, and task queuing. Replaces standalone agent frameworks (Hermes, AutoGPT) by leveraging Claude Code's native crons, dispatch, MCP tools, and memory. Use when the user wants continuous autonomous operation, scheduled tasks, or a self-directing agent loop.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/autonomous-agent-harness/SKILL.md"
+  },
+  {
+    "name": "autonomous-loops",
+    "description": "\"Patterns and architectures for autonomous Claude Code loops — from simple sequential pipelines to RFC-driven multi-agent DAG systems.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/autonomous-loops/SKILL.md"
+  },
+  {
+    "name": "backend-patterns",
+    "description": "Backend architecture patterns, API design, database optimization, and server-side best practices for Node.js, Express, and Next.js API routes.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/backend-patterns/SKILL.md"
+  },
+  {
+    "name": "benchmark",
+    "description": "Use this skill to measure performance baselines, detect regressions before/after PRs, and compare stack alternatives.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/benchmark/SKILL.md"
+  },
+  {
+    "name": "benchmark-methodology",
+    "description": ">- Use after competitive-platform-analysis has produced a tiered competitor set. Scores each competitor across nine weighted dimensions (positioning, voice, visual craft, offer packaging, evidence, enterprise-readiness, thought leadership, pricing, client's strategic tension) with explicit 1–5 rubrics and a tension-plot. Precedes competitive-report-structure.",
+    "origin": "custom",
+    "path": "~/.claude/skills/benchmark-methodology/SKILL.md"
+  },
+  {
+    "name": "benchmark-optimization-loop",
+    "description": "Use when the user asks to make something faster, try many variants, run recursive optimization, benchmark latency/throughput/cost, or choose the best implementation by repeated measured tests.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/benchmark-optimization-loop/SKILL.md"
+  },
+  {
+    "name": "blender-motion-state-inspection",
+    "description": "Use this skill when inspecting Blender characters, rigs, poses, animation retargeting, ground contact, facing direction, or model-vs-motion alignment where screenshots alone are not enough.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/blender-motion-state-inspection/SKILL.md"
+  },
+  {
+    "name": "blueprint",
+    "description": ">- Turn a one-line objective into a step-by-step construction plan for multi-session, multi-agent engineering projects. Each step has a self-contained context brief so a fresh agent can execute it cold. Includes adversarial review gate, dependency graph, parallel step detection, anti-pattern catalog, and plan mutation protocol. TRIGGER when: user requests a plan, blueprint, or roadmap for a complex multi-PR task, or describes work that needs multiple sessions. DO NOT TRIGGER when: task is completable in a single PR or fewer than 3 tool calls, or user says \"just do it\".",
+    "origin": "community",
+    "path": "~/.claude/skills/blueprint/SKILL.md"
+  },
+  {
+    "name": "brand-discovery",
+    "description": ">- Use when a brand needs to discover or articulate its identity through structured multi-session interviews. Covers purpose, positioning, audience, personality, voice, narrative, and founder-brand tension across 8 modules using laddering, 5 Whys, and projective techniques. Produces a resumable session with disk-persisted state and a master brandbook (90_SYNTHESIS.md). --- # Brand Discovery Use this skill to conduct a structured, adaptive brand identity interview. The goal is a complete `90_SYNTHESIS.md` — a master brandbook the organization can use to brief designers, writers, and external collaborators. The interview runs across multiple sessions. Capture answers to disk as you go so that no elicited knowledge is lost when a conversation ends, and so a later session can resume from where the last one stopped. ## When to Activate - A brand is being created, repositioned, or needs a written identity reference to brief collaborators. - Multiple sessions are expected — the conversation will span days or weeks. - Multiple founders or stakeholders need individual interviews before a reconciliation pass. - The user wants a structured, repeatable method rather than an ad-hoc chat. - Existing brand documentation is scattered, implicit, or founder-dependent and needs to be made explicit. ## Session start protocol On every activation, perform these steps **before** asking any interview",
+    "origin": "custom",
+    "path": "~/.claude/skills/brand-discovery/SKILL.md"
+  },
+  {
+    "name": "brand-voice",
+    "description": "Build a source-derived writing style profile from real posts, essays, launch notes, docs, or site copy, then reuse that profile across content, outreach, and social workflows. Use when the user wants voice consistency without generic AI writing tropes.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/brand-voice/SKILL.md"
+  },
+  {
+    "name": "browser-qa",
+    "description": "Use this skill to automate visual testing and UI interaction verification using browser automation after deploying features.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/browser-qa/SKILL.md"
+  },
+  {
+    "name": "brproject-rust-lua-ffi",
+    "description": "Use ao escrever, editar ou revisar código Rust, Cargo.toml ou build.rs; ao integrar Rust com Lua (mlua), Java 25 (Panama/FFM/JNI) ou expor funções extern \"C\"; ao montar sandbox de scripts Lua; ao compilar .dll/.dylib para Windows e macOS. --- # BrProject — Rust, Lua e FFI Interop Guide Guia operacional enxuto para desenvolvimento de alta performance, sandboxing e interoperabilidade entre **Rust (Edition 2024)**, **Lua (LuaJIT / 5.4 / Luau via mlua 0.10+)** e **Java 25 (Project Panama FFM)** em ambientes Windows (MSVC) e macOS (Apple Silicon/Intel). --- ## 1. Regras Mandatórias de Engenharia 1. **FFI Threshold (Custo do Salto):** Só use FFI para processamento em lote ou cargas computacionalmente pesadas (geodata 3D, pathfinding A*/NBA*, criptografia de pacotes, decodificação binária). Operações matemáticas triviais (ex: distância euclidiana simples) custam mais no salto FFI do que calculadas diretamente no JIT do Java ou LuaJIT. 2. **Isolamento de Panic em FFI:** NENHUM panic de Rust pode escapar de uma função `extern \"C\"`. Todo entrypoint DEVE estar envolvido em `std::panic::catch_unwind` e retornar um código de erro numérico. 3. **Rust Edition 2024:** Não utilize `#[no_mangle]` solto; utilize `#[unsafe(no_mangle)]`. 4. **Nomenclatura Alinhada:** No `Cargo.toml`, defina `[lib] name = \"brproject_engine\"` para gerar `brproject_engine.dll` e `libbrproject_engine.dylib` em total paridade com `System.mapLibraryName(\"brproject_engine\")`. 5. **Sandbox Lua Baseado em Whitelist:** Nunca use lista negra de funções. Crie ambientes seguros apenas com funções puras (`math`, `string`, `table` selecionadas) e injete APIs de controle do servidor. 6. **Blindagem contra DoS em Lua:** - Trave CPU com hook de contagem de instruções (`lua.set_hook` / `every_nth_instruction`). - Limite a memória máxima alocável pela VM (`lua.set_memory_limit`). - Congele ou remova `debug.getmetatable` e remova `string.rep` da whitelist para evitar estouro de heap. 7. **Qualidade Contínua:** E",
+    "origin": "custom",
+    "path": "~/.claude/skills/brproject-rust-lua-ffi/SKILL.md"
+  },
+  {
+    "name": "bun-runtime",
+    "description": "Bun as runtime, package manager, bundler, and test runner. When to choose Bun vs Node, migration notes, and Vercel support.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/bun-runtime/SKILL.md"
+  },
+  {
+    "name": "canary-watch",
+    "description": "Use this skill to monitor and verify a deployed URL after releases — checks HTTP endpoints, SSE streams, static assets, console errors, and performance regressions after deploys, merges, or dependency upgrades. Smoke / canary / post-deploy verification.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/canary-watch/SKILL.md"
+  },
+  {
+    "name": "carrier-relationship-management",
+    "description": "> Codified expertise for managing carrier portfolios, negotiating freight rates, tracking carrier performance, allocating freight, and maintaining strategic carrier relationships. Informed by transportation managers with 15+ years experience. Includes scorecarding frameworks, RFP processes, market intelligence, and compliance vetting. Use when managing carriers, negotiating rates, evaluating carrier performance, or building freight strategies.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/carrier-relationship-management/SKILL.md"
+  },
+  {
+    "name": "cisco-ios-patterns",
+    "description": "Cisco IOS and IOS-XE review patterns for show commands, config hierarchy, wildcard masks, ACL placement, interface hygiene, and safe change-window verification.",
+    "origin": "community",
+    "path": "~/.claude/skills/cisco-ios-patterns/SKILL.md"
+  },
+  {
+    "name": "ck",
+    "description": "Persistent per-project memory for Claude Code. Auto-loads project context on session start, tracks sessions with git activity, and writes to native memory. Commands run deterministic Node.js scripts — behavior is consistent across model versions.",
+    "origin": "community",
+    "path": "~/.claude/skills/ck/SKILL.md"
+  },
+  {
+    "name": "claude-devfleet",
+    "description": "Orchestrate multi-agent coding tasks via Claude DevFleet — plan projects, dispatch parallel agents in isolated worktrees, monitor progress, and read structured reports.",
+    "origin": "community",
+    "path": "~/.claude/skills/claude-devfleet/SKILL.md"
+  },
+  {
+    "name": "click-path-audit",
+    "description": "\"Trace every user-facing button/touchpoint through its full state change sequence to find bugs where functions individually work but cancel each other out, produce wrong final state, or leave the UI in an inconsistent state. Use when: systematic debugging found no bugs but users report broken buttons, or after any major refactor touching shared state stores.\"",
+    "origin": "community",
+    "path": "~/.claude/skills/click-path-audit/SKILL.md"
+  },
+  {
+    "name": "clickhouse-io",
+    "description": "ClickHouse database patterns, query optimization, analytics, and data engineering best practices for high-performance analytical workloads.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/clickhouse-io/SKILL.md"
+  },
+  {
+    "name": "code-tour",
+    "description": "Create CodeTour `.tour` files — persona-targeted, step-by-step walkthroughs with real file and line anchors. Use for onboarding tours, architecture walkthroughs, PR tours, RCA tours, and structured \"explain how this works\" requests.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/code-tour/SKILL.md"
+  },
+  {
+    "name": "codebase-onboarding",
+    "description": "Analyze an unfamiliar codebase and generate a structured onboarding guide with architecture map, key entry points, conventions, and a starter CLAUDE.md. Use when joining a new project or setting up Claude Code for the first time in a repo.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/codebase-onboarding/SKILL.md"
+  },
+  {
+    "name": "codehealth-mcp",
+    "description": "Real-time structural Code Health via CodeScene MCP — review before edits, verify score deltas after changes, gate commits and PRs. Use when reviewing code quality, refactoring, checking if AI changes degraded a file, or before commit/PR.",
+    "origin": "community",
+    "path": "~/.claude/skills/codehealth-mcp/SKILL.md"
+  },
+  {
+    "name": "coding-standards",
+    "description": "Baseline cross-project coding conventions for naming, readability, immutability, and code-quality review. Use detailed frontend or backend skills for framework-specific patterns.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/coding-standards/SKILL.md"
+  },
+  {
+    "name": "competitive-platform-analysis",
+    "description": ">- Use when scoping a competitive landscape — identifying, categorising, and score-filtering a competitor set before any benchmarking begins. Decides who counts as a competitor, which tier they belong to, and which sources to mine. First step in the three-skill competitive pipeline; precedes benchmark-methodology. --- # Competitive Platform Analysis Use this skill to decide **who to benchmark** and **where to find them** before any scoring begins. A competitive analysis is only as good as its frame: the wrong set makes the client look either unbeatable or doomed. The goal is a defensible, decision-relevant set — not an exhaustive census. ## When to Activate - About to start a competitive benchmarking project and need to define the competitor set first. - Unsure which companies belong in Direct / Adjacent / Aspirational tiers. - Need a defensible, pruned scope for a market landscape report. - Has a positioning brief and wants to identify who contests that position. - First step before running benchmark-methodology. ## Client positioning brief (establish first) Before scoping the set, establish the client's positioning brief. If you don't already have it, run a short brand-discovery interview to elicit it — do **not** invent one and do **not** scope the set blind. The brief supplies: - **Identity / aesthetic register** — what kind of studio or company this is and how it presents itself. - **Offer** — what services or products it delivers. - **Target clients** — who it sells to. - **Differentiator** — the moat or positioning argument the client believes in. - **Scoping consequence** — the implication for how to weight competitors (e.g., prioritize by distinctiveness vs. capability overlap vs. price). - **Strategic tension** — the paired axes that define the client's white-space (e.g., memorability × hireability). **Do not proceed without the positioning brief.** A competitor list scoped without the client's lens is noise, not intelligence.",
+    "origin": "custom",
+    "path": "~/.claude/skills/competitive-platform-analysis/SKILL.md"
+  },
+  {
+    "name": "competitive-report-structure",
+    "description": ">- Use after benchmark-methodology has produced scored competitor profile cards. Assembles findings into a decision-grade report: landscape map, competitor profiles, benchmarking matrix, white-space analysis, strategic recommendations, and team alignment trigger questions. Final step in the three-skill competitive pipeline. --- # Competitive Report Structure Use this skill to assemble scored competitor cards into a decision-grade report. The report must answer three questions for the client: **who do we compete with, how do we compete, and where is our defensible white-space?** Every section earns its place by moving toward those answers — cut anything that doesn't. ## When to Activate - All competitor profile cards from benchmark-methodology are complete and ready to assemble. - Need to present competitive findings to a founder, leadership team, or board. - The report must drive decisions (who to compete with, how, where the moat is) — not just document the landscape. - Preparing a client deliverable that must be auditable and defensible. ## Client positioning brief (establish first) Before assembling the report, establish the client's positioning brief. It",
+    "origin": "custom",
+    "path": "~/.claude/skills/competitive-report-structure/SKILL.md"
+  },
+  {
+    "name": "compose-multiplatform-patterns",
+    "description": "Compose Multiplatform and Jetpack Compose patterns for KMP projects — state management, navigation, theming, performance, and platform-specific UI.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/compose-multiplatform-patterns/SKILL.md"
+  },
+  {
+    "name": "config-gc",
+    "description": "Garbage collection for your Claude Code configuration. Periodically scans ~/.claude (skills, memory, hooks, permissions, MCP servers, caches) for redundant, stale, orphaned, or low-value items, then walks the user through a confirm-each-deletion cleanup. Use when the user says \"clean up my config\", \"config GC\", \"too many skills\", \"audit my setup\", \"my .claude is bloated\", or asks for a periodic config review.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/config-gc/SKILL.md"
+  },
+  {
+    "name": "configure-ecc",
+    "description": "Interactive installer for Everything Claude Code — guides users through selecting and installing skills and rules to user-level or project-level directories, verifies paths, and optionally optimizes installed files.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/configure-ecc/SKILL.md"
+  },
+  {
+    "name": "connections-optimizer",
+    "description": "Reorganize the user's X and LinkedIn network with review-first pruning, add/follow recommendations, and channel-specific warm outreach drafted in the user's real voice. Use when the user wants to clean up following lists, grow toward current priorities, or rebalance a social graph around higher-signal relationships.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/connections-optimizer/SKILL.md"
+  },
+  {
+    "name": "content-engine",
+    "description": "Create platform-native content systems for X, LinkedIn, TikTok, YouTube, newsletters, and repurposed multi-platform campaigns. Use when the user wants social posts, threads, scripts, content calendars, or one source asset adapted cleanly across platforms.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/content-engine/SKILL.md"
+  },
+  {
+    "name": "content-hash-cache-pattern",
+    "description": "Cache expensive file processing results using SHA-256 content hashes — path-independent, auto-invalidating, with service layer separation.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/content-hash-cache-pattern/SKILL.md"
+  },
+  {
+    "name": "context-budget",
+    "description": "Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/context-budget/SKILL.md"
+  },
+  {
+    "name": "continuous-agent-loop",
+    "description": "Patterns for continuous autonomous agent loops with quality gates, evals, and recovery controls.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/continuous-agent-loop/SKILL.md"
+  },
+  {
+    "name": "continuous-learning",
+    "description": "\"[DEPRECATED - use continuous-learning-v2] Legacy v1 stop-hook skill extractor. v2 is a strict superset with instinct-based, project-scoped, hook-reliable learning. Do not invoke v1; route continuous learning, session learning, and pattern extraction requests to continuous-learning-v2.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/continuous-learning/SKILL.md"
+  },
+  {
+    "name": "continuous-learning-v2",
+    "description": "Instinct-based learning system that observes sessions via hooks, creates atomic instincts with confidence scoring, and evolves them into skills/commands/agents. v2.1 adds project-scoped instincts to prevent cross-project contamination.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/continuous-learning-v2/SKILL.md"
+  },
+  {
+    "name": "contract-first",
+    "description": "Use when multiple consumers and providers must evolve an API or event schema without field drift, integration surprises, or one side silently redefining the interface.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/contract-first/SKILL.md"
+  },
+  {
+    "name": "cost-aware-llm-pipeline",
+    "description": "Cost optimization patterns for LLM API usage — model routing by task complexity, budget tracking, retry logic, and prompt caching.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/cost-aware-llm-pipeline/SKILL.md"
+  },
+  {
+    "name": "cost-tracking",
+    "description": "Track and report Claude Code token usage, spending, and budgets from the local ECC cost-tracker metrics log. Use when the user asks about costs, spending, usage, tokens, budgets, or cost breakdowns by model, session, or date.",
+    "origin": "community",
+    "path": "~/.claude/skills/cost-tracking/SKILL.md"
+  },
+  {
+    "name": "council",
+    "description": "Convene a four-voice council for ambiguous decisions, tradeoffs, and go/no-go calls. Use when multiple valid paths exist and you need structured disagreement before choosing.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/council/SKILL.md"
+  },
+  {
+    "name": "cpp-coding-standards",
+    "description": "C++ coding standards based on the C++ Core Guidelines (isocpp.github.io). Use when writing, reviewing, or refactoring C++ code to enforce modern, safe, and idiomatic practices.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/cpp-coding-standards/SKILL.md"
+  },
+  {
+    "name": "cpp-testing",
+    "description": "Use only when writing/updating/fixing C++ tests, configuring GoogleTest/CTest, diagnosing failing or flaky tests, or adding coverage/sanitizers.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/cpp-testing/SKILL.md"
+  },
+  {
+    "name": "crosspost",
+    "description": "Multi-platform content distribution across X, LinkedIn, Threads, and Bluesky. Adapts content per platform using content-engine patterns. Never posts identical content cross-platform. Use when the user wants to distribute content across social platforms.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/crosspost/SKILL.md"
+  },
+  {
+    "name": "csharp-testing",
+    "description": "C# and .NET testing patterns with xUnit, FluentAssertions, mocking, integration tests, and test organization best practices.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/csharp-testing/SKILL.md"
+  },
+  {
+    "name": "customer-billing-ops",
+    "description": "Operate customer billing workflows such as subscriptions, refunds, churn triage, billing-portal recovery, and plan analysis using connected billing tools like Stripe. Use when the user needs to help a customer, inspect subscription state, or manage revenue-impacting billing operations.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/customer-billing-ops/SKILL.md"
+  },
+  {
+    "name": "customs-trade-compliance",
+    "description": "> Codified expertise for customs documentation, tariff classification, duty optimization, restricted party screening, and regulatory compliance across multiple jurisdictions. Informed by trade compliance specialists with 15+ years experience. Includes HS classification logic, Incoterms application, FTA utilization, and penalty mitigation. Use when handling customs clearance, tariff classification, trade compliance, import/export documentation, or duty optimization.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/customs-trade-compliance/SKILL.md"
+  },
+  {
+    "name": "dart-flutter-patterns",
+    "description": "Production-ready Dart and Flutter patterns covering null safety, immutable state, async composition, widget architecture, popular state management frameworks (BLoC, Riverpod, Provider), GoRouter navigation, Dio networking, Freezed code generation, and clean architecture.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/dart-flutter-patterns/SKILL.md"
+  },
+  {
+    "name": "dashboard-builder",
+    "description": "Build monitoring dashboards that answer real operator questions for Grafana, SigNoz, and similar platforms. Use when turning metrics into a working dashboard instead of a vanity board.",
+    "origin": "ECC direct-port adaptation",
+    "path": "~/.claude/skills/dashboard-builder/SKILL.md"
+  },
+  {
+    "name": "data-scraper-agent",
+    "description": "Build a fully automated AI-powered data collection agent for any public source — job boards, prices, news, GitHub, sports, anything. Runs on a schedule, enriches data with a free LLM (Gemini Flash), stores results in Notion/Sheets/Supabase, and learns from user feedback. Runs 100% free on GitHub Actions. Use when the user wants to monitor, collect, or track any public data automatically.",
+    "origin": "community",
+    "path": "~/.claude/skills/data-scraper-agent/SKILL.md"
+  },
+  {
+    "name": "data-throughput-accelerator",
+    "description": "Use when large data ingestion, backfill, export, ETL, warehouse loading, manifest catch-up, or table synchronization needs to become much faster while preserving data correctness.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/data-throughput-accelerator/SKILL.md"
+  },
+  {
+    "name": "database-migrations",
+    "description": "Database migration best practices for schema changes, data migrations, rollbacks, and zero-downtime deployments across PostgreSQL, MySQL, and common ORMs (Prisma, Drizzle, Kysely, Django, TypeORM, golang-migrate).",
+    "origin": "ECC",
+    "path": "~/.claude/skills/database-migrations/SKILL.md"
+  },
+  {
+    "name": "deep-research",
+    "description": "Multi-source deep research using firecrawl and exa MCPs. Searches the web, synthesizes findings, and delivers cited reports with source attribution. Use when the user wants thorough research on any topic with evidence and citations.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/deep-research/SKILL.md"
+  },
+  {
+    "name": "defi-amm-security",
+    "description": "Security checklist for Solidity AMM contracts, liquidity pools, and swap flows. Covers reentrancy, CEI ordering, donation or inflation attacks, oracle manipulation, slippage, admin controls, and integer math.",
+    "origin": "ECC direct-port adaptation",
+    "path": "~/.claude/skills/defi-amm-security/SKILL.md"
+  },
+  {
+    "name": "delivery-gate",
+    "description": "Stop hook that blocks Claude from finishing until quality checks pass. Detects rationalization patterns (surface text heuristics), stale learning logs (filesystem mtime), and low disk space. Complements self-audit by mechanically enforcing learning capture habits.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/delivery-gate/SKILL.md"
+  },
+  {
+    "name": "deployment-patterns",
+    "description": "Deployment workflows, CI/CD pipeline patterns, Docker containerization, health checks, rollback strategies, and production readiness checklists for web applications.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/deployment-patterns/SKILL.md"
+  },
+  {
+    "name": "design-system",
+    "description": "Use this skill to generate or audit design systems, check visual consistency, and review PRs that touch styling.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/design-system/SKILL.md"
+  },
+  {
+    "name": "django-celery",
+    "description": "Django + Celery async task patterns — configuration, task design, beat scheduling, retries, canvas workflows, monitoring, and testing. Use when adding background jobs, scheduled tasks, or async processing to a Django app.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/django-celery/SKILL.md"
+  },
+  {
+    "name": "django-patterns",
+    "description": "Django architecture patterns, REST API design with DRF, ORM best practices, caching, signals, middleware, and production-grade Django apps.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/django-patterns/SKILL.md"
+  },
+  {
+    "name": "django-security",
+    "description": "Django security best practices, authentication, authorization, CSRF protection, SQL injection prevention, XSS prevention, and secure deployment configurations.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/django-security/SKILL.md"
+  },
+  {
+    "name": "django-tdd",
+    "description": "Django testing strategies with pytest-django, TDD methodology, factory_boy, mocking, coverage, and testing Django REST Framework APIs.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/django-tdd/SKILL.md"
+  },
+  {
+    "name": "django-verification",
+    "description": "\"Verification loop for Django projects: migrations, linting, tests with coverage, security scans, and deployment readiness checks before release or PR.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/django-verification/SKILL.md"
+  },
+  {
+    "name": "dmux-workflows",
+    "description": "Multi-agent orchestration using dmux (tmux pane manager for AI agents). Patterns for parallel agent workflows across Claude Code, Codex, OpenCode, and other harnesses. Use when running multiple agent sessions in parallel or coordinating multi-agent development workflows.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/dmux-workflows/SKILL.md"
+  },
+  {
+    "name": "docker-patterns",
+    "description": "Docker and Docker Compose patterns for local development, container security, networking, volume strategies, and multi-service orchestration.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/docker-patterns/SKILL.md"
+  },
+  {
+    "name": "documentation-lookup",
+    "description": "Use up-to-date library and framework docs via Context7 MCP instead of training data. Activates for setup questions, API references, code examples, or when the user names a framework (e.g. React, Next.js, Prisma).",
+    "origin": "ECC",
+    "path": "~/.claude/skills/documentation-lookup/SKILL.md"
+  },
+  {
+    "name": "dotnet-patterns",
+    "description": "Idiomatic C# and .NET patterns, conventions, dependency injection, async/await, and best practices for building robust, maintainable .NET applications.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/dotnet-patterns/SKILL.md"
+  },
+  {
+    "name": "dynamic-workflow-mode",
+    "description": "\"Design task-local harnesses, eval gates, and reusable skill extraction for Claude dynamic workflow mode and other adaptive agent harnesses.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/dynamic-workflow-mode/SKILL.md"
+  },
+  {
+    "name": "e2e-testing",
+    "description": "Playwright E2E testing patterns, Page Object Model, configuration, CI/CD integration, artifact management, and flaky test strategies.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/e2e-testing/SKILL.md"
+  },
+  {
+    "name": "ecc-guide",
+    "description": "Guide users through ECC's current agents, skills, commands, hooks, rules, install profiles, and project onboarding by reading the live repository surface before answering.",
+    "origin": "community",
+    "path": "~/.claude/skills/ecc-guide/SKILL.md"
+  },
+  {
+    "name": "ecc-recipes",
+    "description": "\"Map a described workflow to the right ECC command-GROUP with run-order and stop condition, and browse all command-group recipe families. Adds a family-grouping + run-order + when-to-stop layer on top of the flat command catalog. Advisory only. TRIGGER when the user says which commands for X, what command group runs X, show ECC recipes, list ECC pipelines, or how do I run a workflow with ECC. DO NOT TRIGGER when the user wants the task executed directly, wants a single-command deep doc (use ecc-guide), or wants a draft prompt rewritten (use prompt-optimizer).\"",
+    "origin": "community",
+    "path": "~/.claude/skills/ecc-recipes/SKILL.md"
+  },
+  {
+    "name": "ecc-tools-cost-audit",
+    "description": "Evidence-first ECC Tools burn and billing audit workflow. Use when investigating runaway PR creation, quota bypass, premium-model leakage, duplicate jobs, or GitHub App cost spikes in the ECC Tools repo.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ecc-tools-cost-audit/SKILL.md"
+  },
+  {
+    "name": "email-ops",
+    "description": "Evidence-first mailbox triage, drafting, send verification, and sent-mail-safe follow-up workflow for ECC. Use when the user wants to organize email, draft or send through the real mail surface, or prove what landed in Sent.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/email-ops/SKILL.md"
+  },
+  {
+    "name": "energy-procurement",
+    "description": "> Codified expertise for electricity and gas procurement, tariff optimization, demand charge management, renewable PPA evaluation, and multi-facility energy cost management. Informed by energy procurement managers with 15+ years experience at large commercial and industrial consumers. Includes market structure analysis, hedging strategies, load profiling, and sustainability reporting frameworks. Use when procuring energy, optimizing tariffs, managing demand charges, evaluating PPAs, or developing energy strategies.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/energy-procurement/SKILL.md"
+  },
+  {
+    "name": "enterprise-agent-ops",
+    "description": "Operate long-lived agent workloads with observability, security boundaries, and lifecycle management.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/enterprise-agent-ops/SKILL.md"
+  },
+  {
+    "name": "error-handling",
+    "description": "Patterns for robust error handling across TypeScript, Python, and Go. Covers typed errors, error boundaries, retries, circuit breakers, and user-facing error messages.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/error-handling/SKILL.md"
+  },
+  {
+    "name": "eval-harness",
+    "description": "Formal evaluation framework for Claude Code sessions implementing eval-driven development (EDD) principles",
+    "origin": "ECC",
+    "path": "~/.claude/skills/eval-harness/SKILL.md"
+  },
+  {
+    "name": "evm-token-decimals",
+    "description": "Prevent silent decimal mismatch bugs across EVM chains. Covers runtime decimal lookup, chain-aware caching, bridged-token precision drift, and safe normalization for bots, dashboards, and DeFi tools.",
+    "origin": "ECC direct-port adaptation",
+    "path": "~/.claude/skills/evm-token-decimals/SKILL.md"
+  },
+  {
+    "name": "exa-search",
+    "description": "Neural search via Exa MCP for web, code, and company research. Use when the user needs web search, code examples, company intel, people lookup, or AI-powered deep research with Exa's neural search engine.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/exa-search/SKILL.md"
+  },
+  {
+    "name": "fal-ai-media",
+    "description": "Unified media generation via fal.ai MCP — image, video, and audio. Covers text-to-image (Nano Banana), text/image-to-video (Seedance, Kling, Veo 3), text-to-speech (CSM-1B), and video-to-audio (ThinkSound). Use when the user wants to generate images, videos, or audio with AI.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/fal-ai-media/SKILL.md"
+  },
+  {
+    "name": "fastapi-patterns",
+    "description": "FastAPI best practices covering project structure, Pydantic v2 schemas, dependency injection, async handlers, authentication, authorization, transactional service layers, and testing with httpx and pytest.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/fastapi-patterns/SKILL.md"
+  },
+  {
+    "name": "finance-billing-ops",
+    "description": "Evidence-first revenue, pricing, refunds, team-billing, and billing-model truth workflow for ECC. Use when the user wants a sales snapshot, pricing comparison, duplicate-charge diagnosis, or code-backed billing reality instead of generic payments advice.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/finance-billing-ops/SKILL.md"
+  },
+  {
+    "name": "flox-environments",
+    "description": "\"Create reproducible, cross-platform (macOS/Linux) development environments with Flox, a declarative Nix-based environment manager. Use when setting up project toolchains for any language, installing system-level dependencies (compilers, databases, native libs like openssl/BLAS), pinning exact package versions for a team, running local services (PostgreSQL, Redis, Kafka), onboarding developers with one command, or solving 'works on my machine' problems — including agent/vibe-coding setups that need project-scoped tools without sudo. Also use when the user mentions .flox/, manifest.toml, flox activate, or FloxHub.\"",
+    "origin": "Flox",
+    "path": "~/.claude/skills/flox-environments/SKILL.md"
+  },
+  {
+    "name": "flutter-dart-code-review",
+    "description": "Library-agnostic Flutter/Dart code review checklist covering widget best practices, state management patterns (BLoC, Riverpod, Provider, GetX, MobX, Signals), Dart idioms, performance, accessibility, security, and clean architecture.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/flutter-dart-code-review/SKILL.md"
+  },
+  {
+    "name": "foundation-models-on-device",
+    "description": "Apple FoundationModels framework for on-device LLM — text generation, guided generation with @Generable, tool calling, and snapshot streaming in iOS 26+. --- # FoundationModels: On-Device LLM (iOS 26) Patterns for integrating Apple's on-device language model into apps using the FoundationModels framework. Covers text generation, structured output with `@Generable`, custom tool calling, and snapshot streaming — all running on-device for privacy and offline support. ## When to Activate - Building AI-powered features using Apple Intelligence on-device - Generating or summarizing text without cloud dependency - Extracting structured data from natural language input - Implementing custom tool calling for domain-specific AI actions - Streaming structured responses for real-time UI updates - Need privacy-preserving AI (no data leaves the device) ## Core Pattern — Availability Check Always check model availability before creating a session: ```swift struct GenerativeView: View { private var model = SystemLanguageModel.default var body: some View { switch model.availability { case .available: ContentView() case .unavailable(.deviceNotEligible): Text(\"Device not eligible for Apple Intelligence\") case .unavailable(.appleIntelligenceNotEnabled): Text(\"Please enable Apple Intelligence in Settings\") case .unavailable(.modelNotReady): Text(\"Model is downloading or not ready\") case .unavailable(let other): Text(\"Model unavailable: \\(other)\") } } } ``` ## Core Pattern — Basic Session ```swift // Single-turn: create a new session each time let session = LanguageModelSession() let response = try await session.respond(to: \"What's a good month to visit Paris?\") print(response.content) // Multi-turn: reuse session for conversation context let session = LanguageModelSession(instructions: \"\"\" You are a cooking assistant. Provide recipe sugges",
+    "origin": "custom",
+    "path": "~/.claude/skills/foundation-models-on-device/SKILL.md"
+  },
+  {
+    "name": "frontend-a11y",
+    "description": "> Accessibility patterns for React and Next.js — semantic HTML, ARIA attributes, form labeling, keyboard navigation, focus management, and screen reader support. Use when building any interactive UI component or form.",
+    "origin": "community",
+    "path": "~/.claude/skills/frontend-a11y/SKILL.md"
+  },
+  {
+    "name": "frontend-design-direction",
+    "description": "Set an ECC-specific frontend design direction for production UI work. Use when building or improving websites, dashboards, applications, components, landing pages, visual tools, or any web UI that needs stronger product-specific design judgment.",
+    "origin": "community",
+    "path": "~/.claude/skills/frontend-design-direction/SKILL.md"
+  },
+  {
+    "name": "frontend-patterns",
+    "description": "Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/frontend-patterns/SKILL.md"
+  },
+  {
+    "name": "frontend-slides",
+    "description": "Create stunning, animation-rich HTML presentations from scratch or by converting PowerPoint files. Use when the user wants to build a presentation, convert a PPT/PPTX to web, or create slides for a talk/pitch. Helps non-designers discover their aesthetic through visual exploration rather than abstract choices.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/frontend-slides/SKILL.md"
+  },
+  {
+    "name": "fsharp-testing",
+    "description": "F# testing patterns with xUnit, FsUnit, Unquote, FsCheck property-based testing, integration tests, and test organization best practices.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/fsharp-testing/SKILL.md"
+  },
+  {
+    "name": "gan-style-harness",
+    "description": "\"GAN-inspired Generator-Evaluator agent harness for building high-quality applications autonomously. Based on Anthropic's March 2026 harness design paper.\"",
+    "origin": "ECC-community",
+    "path": "~/.claude/skills/gan-style-harness/SKILL.md"
+  },
+  {
+    "name": "gateguard",
+    "description": "Fact-forcing gate that blocks Edit/Write/Bash (including MultiEdit) and demands concrete investigation (importers, data schemas, user instruction) before allowing the action. Measurably improves output quality by +2.25 points vs ungated agents.",
+    "origin": "community",
+    "path": "~/.claude/skills/gateguard/SKILL.md"
+  },
+  {
+    "name": "generating-python-installer",
+    "description": "\"Commercial-grade Python installer expert for Windows: Nuitka extreme compilation, dist slimming, DLL footprint analysis, and Inno Setup packaging to ship the smallest, fastest installers. Use only for advanced packaging/optimization (minimal size, fast startup), not basic script-to-exe conversion. 中文触发：Nuitka 极限优化、Python 商业打包、极限编译 Python、dist 瘦身、DLL 分析、最小安装包、最快启动、商业级打包风格\" --- # Generating Python Installer (Commercial-Grade) You are a **Python commercial deployment expert**. Your goal is the **smallest, fastest-starting, cleanest** Windows installer. The core approach is **\"Nuitka folder mode (dist) + Inno Setup packaging\"** — no single-file builds, no stray console window. ## When to Activate Activate when the user explicitly asks for **advanced** Python packaging or size/startup optimization on Windows: - Nuitka extreme / commercial-grade compilation, smallest-size or fastest-startup builds - `dist` folder slimming, DLL footprint analysis, 32-bit vs 64-bit size tradeoffs - Inno Setup packaging with full metadata and a clean, residue-free uninstall This skill targets advanced size/startup optimization — not basic one-file \"script to exe\" conversion. ## How It Works 1. **Confirm build parameters** — app name, version, publisher, exe name, source/output dirs, icon. Never auto-fill; ask the user. 2. **Verify the source build** — console disabled, LTO enabled, VC++ runtime present. 3. **Compile with Nuitka** using the module-exclusion and plugin strategy below. 4. **Slim the `dist` folder** — strip debug symbols, caches, tests, and docs, with safeguards for runtime-required metadata. 5. **Analyze DLLs** to find and trim the largest dependencies. 6. **Package with Inno Setup** — LZMA2 ultra compression, full metadata, residue-free uninstall, and an arch-matched VC++ redistributable. ## Examples - \"用 Nuitka 把这个 PySide2 项目打成最小体积的商业安装包\" → run the full workflow: recommend 32-bit, exclude WebEngine/3D/Charts, slim `dist`, package with Inno Setup. - \"我的 exe 有 400",
+    "origin": "custom",
+    "path": "~/.claude/skills/generating-python-installer/SKILL.md"
+  },
+  {
+    "name": "git-workflow",
+    "description": "Git workflow patterns including branching strategies, commit conventions, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/git-workflow/SKILL.md"
+  },
+  {
+    "name": "github-ops",
+    "description": "GitHub repository operations, automation, and management. Issue triage, PR management, CI/CD operations, release management, and security monitoring using the gh CLI. Use when the user wants to manage GitHub issues, PRs, CI status, releases, contributors, stale items, or any GitHub operational task beyond simple git commands.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/github-ops/SKILL.md"
+  },
+  {
+    "name": "golang-patterns",
+    "description": "Idiomatic Go patterns, best practices, and conventions for building robust, efficient, and maintainable Go applications.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/golang-patterns/SKILL.md"
+  },
+  {
+    "name": "golang-testing",
+    "description": "Go testing patterns including table-driven tests, subtests, benchmarks, fuzzing, and test coverage. Follows TDD methodology with idiomatic Go practices.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/golang-testing/SKILL.md"
+  },
+  {
+    "name": "google-workspace-ops",
+    "description": "Operate across Google Drive, Docs, Sheets, and Slides as one workflow surface for plans, trackers, decks, and shared documents. Use when the user needs to find, summarize, edit, migrate, or clean up Google Workspace assets without dropping to raw tool calls.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/google-workspace-ops/SKILL.md"
+  },
+  {
+    "name": "growth-log",
+    "description": "\"Use after a complex task, failure, or when reviewing what was learned. Teaches how to write growth logs that extract reusable patterns — not diary entries.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/growth-log/SKILL.md"
+  },
+  {
+    "name": "healthcare-cdss-patterns",
+    "description": "Clinical Decision Support System (CDSS) development patterns. Drug interaction checking, dose validation, clinical scoring (NEWS2, qSOFA), alert severity classification, and integration into EMR workflows.",
+    "origin": "Health1 Super Speciality Hospitals — contributed by Dr. Keyur Patel",
+    "path": "~/.claude/skills/healthcare-cdss-patterns/SKILL.md"
+  },
+  {
+    "name": "healthcare-emr-patterns",
+    "description": "EMR/EHR development patterns for healthcare applications. Clinical safety, encounter workflows, prescription generation, clinical decision support integration, and accessibility-first UI for medical data entry.",
+    "origin": "Health1 Super Speciality Hospitals — contributed by Dr. Keyur Patel",
+    "path": "~/.claude/skills/healthcare-emr-patterns/SKILL.md"
+  },
+  {
+    "name": "healthcare-eval-harness",
+    "description": "Patient safety evaluation harness for healthcare application deployments. Automated test suites for CDSS accuracy, PHI exposure, clinical workflow integrity, and integration compliance. Blocks deployments on safety failures.",
+    "origin": "Health1 Super Speciality Hospitals — contributed by Dr. Keyur Patel",
+    "path": "~/.claude/skills/healthcare-eval-harness/SKILL.md"
+  },
+  {
+    "name": "healthcare-phi-compliance",
+    "description": "Protected Health Information (PHI) and Personally Identifiable Information (PII) compliance patterns for healthcare applications. Covers data classification, access control, audit trails, encryption, and common leak vectors.",
+    "origin": "Health1 Super Speciality Hospitals — contributed by Dr. Keyur Patel",
+    "path": "~/.claude/skills/healthcare-phi-compliance/SKILL.md"
+  },
+  {
+    "name": "hermes-imports",
+    "description": "Convert local Hermes operator workflows into sanitized ECC skills and release-pack artifacts. Use when preparing a Hermes workflow for public ECC reuse without leaking private workspace state, credentials, or local-only paths.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/hermes-imports/SKILL.md"
+  },
+  {
+    "name": "hexagonal-architecture",
+    "description": "Design, implement, and refactor Ports & Adapters systems with clear domain boundaries, dependency inversion, and testable use-case orchestration across TypeScript, Java, Kotlin, and Go services.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/hexagonal-architecture/SKILL.md"
+  },
+  {
+    "name": "hipaa-compliance",
+    "description": "HIPAA-specific entrypoint for healthcare privacy and security work. Use when a task is explicitly framed around HIPAA, PHI handling, covered entities, BAAs, breach posture, or US healthcare compliance requirements.",
+    "origin": "ECC direct-port adaptation",
+    "path": "~/.claude/skills/hipaa-compliance/SKILL.md"
+  },
+  {
+    "name": "homelab-network-readiness",
+    "description": "Readiness checklist for homelab VLAN segmentation, local DNS filtering, and WireGuard-style remote access before changing router, firewall, DHCP, or VPN configuration.",
+    "origin": "community",
+    "path": "~/.claude/skills/homelab-network-readiness/SKILL.md"
+  },
+  {
+    "name": "homelab-network-setup",
+    "description": "Practical home and homelab network planning for gateways, switches, access points, IP ranges, DHCP reservations, DNS, cabling, and common beginner mistakes.",
+    "origin": "community",
+    "path": "~/.claude/skills/homelab-network-setup/SKILL.md"
+  },
+  {
+    "name": "homelab-pihole-dns",
+    "description": "Pi-hole installation, blocklist management, DNS-over-HTTPS setup, DHCP integration, local DNS records, and troubleshooting broken DNS resolution on a home network.",
+    "origin": "community",
+    "path": "~/.claude/skills/homelab-pihole-dns/SKILL.md"
+  },
+  {
+    "name": "homelab-vlan-segmentation",
+    "description": "Segmenting home networks into VLANs for IoT, guest, trusted, and server traffic using UniFi, pfSense/OPNsense, and MikroTik — including switch trunk config, firewall rules, and wireless SSID mapping.",
+    "origin": "community",
+    "path": "~/.claude/skills/homelab-vlan-segmentation/SKILL.md"
+  },
+  {
+    "name": "homelab-wireguard-vpn",
+    "description": "WireGuard VPN server setup, peer configuration, key generation, split tunneling vs full tunnel routing, and remote access to a home network from mobile and laptop clients.",
+    "origin": "community",
+    "path": "~/.claude/skills/homelab-wireguard-vpn/SKILL.md"
+  },
+  {
+    "name": "hookify-rules",
+    "description": "This skill should be used when the user asks to create a hookify rule, write a hook rule, configure hookify, add a hookify rule, or needs guidance on hookify rule syntax and patterns. --- # Writing Hookify Rules ## Overview Hookify rules are markdown files with YAML frontmatter that define patterns to watch for and messages to show when those patterns match. Rules are stored in `.claude/hookify.{rule-name}.local.md` files. ## Rule File Format ### Basic Structure ```markdown ---",
+    "origin": "custom",
+    "path": "~/.claude/skills/hookify-rules/SKILL.md"
+  },
+  {
+    "name": "impeccable",
+    "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks.",
+    "origin": "custom",
+    "path": "~/.claude/skills/impeccable/SKILL.md"
+  },
+  {
+    "name": "inherit-legacy-style",
+    "description": "Legacy-project style inheritance skill. Use when the user types /inherit-legacy-style, or when onboarding an AI coding agent onto a hand-written legacy project and you need to prevent \"style drift\" (the model imposing its pretrained mainstream idioms onto the project). Language- and framework-agnostic — it aligns meta-architecture only, not syntax. Once run, it becomes a behavioral constraint on all subsequent coding tasks. Do NOT use for pure research or one-off questions unrelated to code-style alignment.",
+    "origin": "community",
+    "path": "~/.claude/skills/inherit-legacy-style/SKILL.md"
+  },
+  {
+    "name": "intent-driven-development",
+    "description": "Turn ambiguous or high-impact product and engineering changes into scoped, verifiable acceptance criteria before or alongside implementation. Use when a user asks to clarify a feature, define acceptance criteria, de-risk a security/data/migration/integration change, prepare implementation requirements for another agent, or make a complex request testable. Do not trigger for trivial edits, straightforward fixes, active debugging, code review, or implementation requests whose acceptance conditions are already clear unless the user explicitly invokes this skill. --- # Intent-Driven Development Produce useful acceptance criteria without turning specification into ceremony. Inspect available context first, expose genuine ambiguity, and choose verification methods that fit the work and its risk. ## When to Activate - User asks to clarify a feature, define acceptance criteria, or de-risk a change before implementation - Request touches security, authentication, persistent data, migrations, external APIs, or compliance - User wants to prepare a handoff artifact for another agent or team - Request is ambiguous enough that the expected outcome is not yet observable or testable - User explicitly invokes this skill with `/intent-driven-development` Do not activate for trivial edits, straightforward one-line fixes, active debugging sessions, code review requests, or implementation requests whose acceptance conditions are already clear. ## How It Works 1. **Inspect context first** — reads the repository, docs, schemas, and test infrastructure for technical facts before asking any question, while treating product/business constraints as something only the user or a product artifact can supply 2. **Choose depth** — selects Quick Capture (3-7 criteria, low/moderate risk) or Full Acceptance Brief (security, data, migration, cross-system changes) based on the risk profile 3. **Ask minimally** — only asks questions whose answers cannot be inferred and that materially change sco",
+    "origin": "custom",
+    "path": "~/.claude/skills/intent-driven-development/SKILL.md"
+  },
+  {
+    "name": "inventory-demand-planning",
+    "description": "> Codified expertise for demand forecasting, safety stock optimization, replenishment planning, and promotional lift estimation at multi-location retailers. Informed by demand planners with 15+ years experience managing hundreds of SKUs. Includes forecasting method selection, ABC/XYZ analysis, seasonal transition management, and vendor negotiation frameworks. Use when forecasting demand, setting safety stock, planning replenishment, managing promotions, or optimizing inventory levels.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/inventory-demand-planning/SKILL.md"
+  },
+  {
+    "name": "investor-materials",
+    "description": "Create and update pitch decks, one-pagers, investor memos, accelerator applications, financial models, and fundraising materials. Use when the user needs investor-facing documents, projections, use-of-funds tables, milestone plans, or materials that must stay internally consistent across multiple fundraising assets.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/investor-materials/SKILL.md"
+  },
+  {
+    "name": "investor-outreach",
+    "description": "Draft cold emails, warm intro blurbs, follow-ups, update emails, and investor communications for fundraising. Use when the user wants outreach to angels, VCs, strategic investors, or accelerators and needs concise, personalized, investor-facing messaging.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/investor-outreach/SKILL.md"
+  },
+  {
+    "name": "ios-icon-gen",
+    "description": "Generate iOS app icons as PNG imagesets for Xcode asset catalogs from SF Symbols (5000+ Apple-native) or Iconify API (275k+ open source icons from 200+ collections). Use when generating icons, creating icon assets, adding icons to asset catalog, or searching for icons for iOS projects.",
+    "origin": "community",
+    "path": "~/.claude/skills/ios-icon-gen/SKILL.md"
+  },
+  {
+    "name": "iterative-retrieval",
+    "description": "Pattern for progressively refining context retrieval to solve the subagent context problem",
+    "origin": "ECC",
+    "path": "~/.claude/skills/iterative-retrieval/SKILL.md"
+  },
+  {
+    "name": "ito-basket-compare",
+    "description": "Compare Itô prediction-market baskets against a user's knowledge base, portfolio notes, financial context, watchlist, or research thesis. Use for read-only basket comparison and gap analysis without investment advice or live trading.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ito-basket-compare/SKILL.md"
+  },
+  {
+    "name": "ito-compute",
+    "description": "Query live GPU inventory, submit an authenticated Itô fixed-rate RFQ, inspect RFQ or procurement status, and run explicitly gated node qualification through the separately installed canonical CLI. Use when a user asks to find H100/H200 capacity, request a fixed compute rate, check Itô compute status, or validate GPU nodes.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ito-compute/SKILL.md"
+  },
+  {
+    "name": "ito-data-atlas-agent",
+    "description": "Design background Data Atlas style agents for Itô basket research, market discovery, parameter drafting, and human-in-the-loop editing. Use for architecture and workflow planning, not live order execution.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ito-data-atlas-agent/SKILL.md"
+  },
+  {
+    "name": "ito-market-intelligence",
+    "description": "Research prediction-market events, venues, underliers, liquidity, and news context for Itô basket workflows. Use for read-only market intelligence, API-gated Itô exploration, and source-grounded prediction-market briefings without investment advice or live trading.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ito-market-intelligence/SKILL.md"
+  },
+  {
+    "name": "ito-trade-planner",
+    "description": "Build a non-advisory prediction-market trade planning worksheet for Itô or venue workflows. Use to inspect venues, underliers, constraints, order prerequisites, and manual execution steps without placing trades or recommending positions.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ito-trade-planner/SKILL.md"
+  },
+  {
+    "name": "java-coding-standards",
+    "description": "\"Java coding standards for Spring Boot and Quarkus services: naming, immutability, Optional usage, streams, exceptions, generics, CDI, reactive patterns, and project layout. Automatically applies framework-specific conventions.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/java-coding-standards/SKILL.md"
+  },
+  {
+    "name": "jira-integration",
+    "description": "Use this skill when retrieving Jira tickets, analyzing requirements, updating ticket status, adding comments, or transitioning issues. Provides Jira API patterns via MCP or direct REST calls.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/jira-integration/SKILL.md"
+  },
+  {
+    "name": "jpa-patterns",
+    "description": "JPA/Hibernate patterns for entity design, relationships, query optimization, transactions, auditing, indexing, pagination, and pooling in Spring Boot.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/jpa-patterns/SKILL.md"
+  },
+  {
+    "name": "knowledge-ops",
+    "description": "Knowledge base management, ingestion, sync, and retrieval across multiple storage layers (local files, MCP memory, vector stores, Git repos). Use when the user wants to save, organize, sync, deduplicate, or search across their knowledge systems.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/knowledge-ops/SKILL.md"
+  },
+  {
+    "name": "kotlin-coroutines-flows",
+    "description": "Kotlin Coroutines and Flow patterns for Android and KMP — structured concurrency, Flow operators, StateFlow, error handling, and testing.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/kotlin-coroutines-flows/SKILL.md"
+  },
+  {
+    "name": "kotlin-exposed-patterns",
+    "description": "JetBrains Exposed ORM patterns including DSL queries, DAO pattern, transactions, HikariCP connection pooling, Flyway migrations, and repository pattern.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/kotlin-exposed-patterns/SKILL.md"
+  },
+  {
+    "name": "kotlin-ktor-patterns",
+    "description": "Ktor server patterns including routing DSL, plugins, authentication, Koin DI, kotlinx.serialization, WebSockets, and testApplication testing.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/kotlin-ktor-patterns/SKILL.md"
+  },
+  {
+    "name": "kotlin-patterns",
+    "description": "Idiomatic Kotlin patterns, best practices, and conventions for building robust, efficient, and maintainable Kotlin applications with coroutines, null safety, and DSL builders.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/kotlin-patterns/SKILL.md"
+  },
+  {
+    "name": "kotlin-testing",
+    "description": "Kotlin testing patterns with Kotest, MockK, coroutine testing, property-based testing, and Kover coverage. Follows TDD methodology with idiomatic Kotlin practices.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/kotlin-testing/SKILL.md"
+  },
+  {
+    "name": "kubernetes-patterns",
+    "description": "Kubernetes workload patterns, resource management, RBAC, probes, autoscaling, ConfigMap/Secret handling, and kubectl debugging for production-grade deployments.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/kubernetes-patterns/SKILL.md"
+  },
+  {
+    "name": "laravel-patterns",
+    "description": "Laravel architecture patterns, routing/controllers, Eloquent ORM, service layers, queues, events, caching, and API resources for production apps.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/laravel-patterns/SKILL.md"
+  },
+  {
+    "name": "laravel-plugin-discovery",
+    "description": "Discover and evaluate Laravel packages via LaraPlugins.io MCP. Use when the user wants to find plugins, check package health, or assess Laravel/PHP compatibility.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/laravel-plugin-discovery/SKILL.md"
+  },
+  {
+    "name": "laravel-security",
+    "description": "Laravel security best practices — authentication, authorization, Eloquent safety, CSRF, XSS prevention, API security, and secure deployment configurations.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/laravel-security/SKILL.md"
+  },
+  {
+    "name": "laravel-tdd",
+    "description": "Laravel testing strategies with PHPUnit, Pest, model factories, HTTP tests, Sanctum authentication testing, mocking, and coverage.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/laravel-tdd/SKILL.md"
+  },
+  {
+    "name": "laravel-verification",
+    "description": "\"Verification loop for Laravel projects: env checks, linting, static analysis, tests with coverage, security scans, and deployment readiness.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/laravel-verification/SKILL.md"
+  },
+  {
+    "name": "latency-critical-systems",
+    "description": "Use for latency-sensitive systems such as realtime dashboards, market data, streaming agents, execution gateways, queues, caches, or HFT-like infrastructure where freshness and p95 latency matter.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/latency-critical-systems/SKILL.md"
+  },
+  {
+    "name": "lead-intelligence",
+    "description": "AI-native lead intelligence and outreach pipeline. Replaces Apollo, Clay, and ZoomInfo with agent-powered signal scoring, mutual ranking, warm path discovery, source-derived voice modeling, and channel-specific outreach across email, LinkedIn, and X. Use when the user wants to find, qualify, and reach high-value contacts.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/lead-intelligence/SKILL.md"
+  },
+  {
+    "name": "learned",
+    "description": "",
+    "origin": "custom",
+    "path": "~/.claude/skills/learned/SKILL.md"
+  },
+  {
+    "name": "liquid-glass-design",
+    "description": "iOS 26 Liquid Glass design system — dynamic glass material with blur, reflection, and interactive morphing for SwiftUI, UIKit, and WidgetKit. --- # Liquid Glass Design System (iOS 26) Patterns for implementing Apple's Liquid Glass — a dynamic material that blurs content behind it, reflects color and light from surrounding content, and reacts to touch and pointer interactions. Covers SwiftUI, UIKit, and WidgetKit integration. ## When to Activate - Building or updating apps for iOS 26+ with the new design language - Implementing glass-style buttons, cards, toolbars, or containers - Creating morphing transitions between glass elements - Applying Liquid Glass effects to widgets - Migrating existing blur/material effects to the new Liquid Glass API ## Core Pattern — SwiftUI ### Basic Glass Effect The simplest way to add Liquid Glass to any view: ```swift Text(\"Hello, World!\") .font(.title) .padding() .glassEffect() // Default: regular variant, capsule shape ``` ### Customizing Shape and Tint ```swift Text(\"Hello, World!\") .font(.title) .padding() .glassEffect(.regular.tint(.orange).interactive(), in: .rect(cornerRadius: 16.0)) ``` Key customization options: - `.regular` — standard glass effect - `.tint(Color)` — add color tint for prominence - `.interactive()` — react to touch and pointer interactions - Shape: `.capsule` (default), `.rect(cornerRadius:)`, `.circle` ### Glass Button Styles ```swift Button(\"Click Me\") { /* action */ } .buttonStyle(.glass) Button(\"Important\") { /* action */ } .buttonStyle(.glassProminent) ``` ### GlassEffectContainer for Multiple Elements Always wrap multiple glass views in a container for performance and morphing: ```swift GlassEffectContainer(spacing: 40.0) { HStack(spacing: 40.0) { Image(systemName: \"scribble.variable\") .frame(width: 80.0, height: 80.0) .font(.system(size: 36)) .glassEffect() Image(systemName: \"eraser.fill\")",
+    "origin": "custom",
+    "path": "~/.claude/skills/liquid-glass-design/SKILL.md"
+  },
+  {
+    "name": "llm-trading-agent-security",
+    "description": "Security patterns for autonomous trading agents with wallet or transaction authority. Covers prompt injection, spend limits, pre-send simulation, circuit breakers, MEV protection, and key handling.",
+    "origin": "ECC direct-port adaptation",
+    "path": "~/.claude/skills/llm-trading-agent-security/SKILL.md"
+  },
+  {
+    "name": "logistics-exception-management",
+    "description": "> Codified expertise for handling freight exceptions, shipment delays, damages, losses, and carrier disputes. Informed by logistics professionals with 15+ years operational experience. Includes escalation protocols, carrier-specific behaviors, claims procedures, and judgment frameworks. Use when handling shipping exceptions, freight claims, delivery issues, or carrier disputes.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/logistics-exception-management/SKILL.md"
+  },
+  {
+    "name": "loop-design-check",
+    "description": "\"Design a goal-oriented agent loop, and review it for the ways loops go wrong — spinning and burning tokens, Goodhart-gaming the verifier, or running a wrong answer to completion. Two actions: (1) WRITE a loop — gate whether to build it, define a machine-decidable goal, pick the loop type, pick a skeleton; (2) REVIEW a loop — run it past five failure modes plus decidability, boundaries, fallback, judge independence, and keep-judgment-with-the-human red lines. Use when designing an autonomous agent loop, or when you already have one and worry it will spin, cheat, or run a wrong answer to the end. Complements the mechanism-layer loop skills (autonomous-loops, continuous-agent-loop) by covering the judgment layer they don't. 中文触发：写 loop、设计 loop、做一个 loop、检查 loop 对不对、loop 体检、loop 会不会跑飞、可判定目标、五个崩法、plan build judge。English triggers: design an agent loop, write a loop, check a loop, loop review, prevent a runaway loop, goal-oriented loop, decidable goal, plan/build/judge.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/loop-design-check/SKILL.md"
+  },
+  {
+    "name": "mailtrap-email-integration",
+    "description": "Guides agents through integrating transactional email sending via Mailtrap's Email API, including sandbox testing, domain verification, and API authentication. Use when implementing email-sending features, debugging delivery issues, or setting up safe dev/staging email testing.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/mailtrap-email-integration/SKILL.md"
+  },
+  {
+    "name": "make-interfaces-feel-better",
+    "description": "Apply concrete design-engineering details that make interfaces feel polished. Use when reviewing or improving UI spacing, typography, borders, shadows, motion, hit areas, icons, text wrapping, and interaction states.",
+    "origin": "community",
+    "path": "~/.claude/skills/make-interfaces-feel-better/SKILL.md"
+  },
+  {
+    "name": "manim-video",
+    "description": "Build reusable Manim explainers for technical concepts, graphs, system diagrams, and product walkthroughs, then hand off to the wider ECC video stack if needed. Use when the user wants a clean animated explainer rather than a generic talking-head script.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/manim-video/SKILL.md"
+  },
+  {
+    "name": "market-research",
+    "description": "Conduct market research, competitive analysis, investor due diligence, and industry intelligence with source attribution and decision-oriented summaries. Use when the user wants market sizing, competitor comparisons, fund research, technology scans, or research that informs business decisions.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/market-research/SKILL.md"
+  },
+  {
+    "name": "marketing-campaign",
+    "description": "End-to-end marketing campaign planning and execution. Covers audience research, positioning, campaign angle definition, landing page copy, email sequences, social posts, ad copy, short-form video scripts, and content calendars. Use as the orchestration layer for multi-channel product launches.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/marketing-campaign/SKILL.md"
+  },
+  {
+    "name": "mcp-server-patterns",
+    "description": "Build MCP servers with Node/TypeScript SDK — tools, resources, prompts, Zod validation, stdio vs Streamable HTTP. Use Context7 or official MCP docs for latest API.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/mcp-server-patterns/SKILL.md"
+  },
+  {
+    "name": "messages-ops",
+    "description": "Evidence-first live messaging workflow for ECC. Use when the user wants to read texts or DMs, recover a recent one-time code, inspect a thread before replying, or prove which message source was actually checked.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/messages-ops/SKILL.md"
+  },
+  {
+    "name": "ml-adoption-playbook",
+    "description": "End-to-end methodology for AI agents and software engineers to add machine learning algorithms to existing non-ML codebases. Covers problem framing, data readiness, architectural decoupling, and baseline model integration.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ml-adoption-playbook/SKILL.md"
+  },
+  {
+    "name": "mle-workflow",
+    "description": "Production machine-learning engineering workflow for data contracts, reproducible training, model evaluation, deployment, monitoring, and rollback. Use when building, reviewing, or hardening ML systems beyond one-off notebooks.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/mle-workflow/SKILL.md"
+  },
+  {
+    "name": "motion-advanced",
+    "description": "Advanced motion patterns for React / Next.js — drag & drop, gestures, text animations, SVG path drawing, custom hooks, imperative sequences (useAnimate), loaders, and the full API decision tree. Requires motion-foundations.",
+    "origin": "custom",
+    "path": "~/.claude/skills/motion-advanced/SKILL.md"
+  },
+  {
+    "name": "motion-foundations",
+    "description": "Motion tokens, spring presets, performance rules, device adaptation, accessibility enforcement, and SSR safety for React / Next.js using motion/react. Foundation layer — all other motion skills depend on this.",
+    "origin": "custom",
+    "path": "~/.claude/skills/motion-foundations/SKILL.md"
+  },
+  {
+    "name": "motion-patterns",
+    "description": "Production-ready animation patterns for React / Next.js — button, modal, toast, stagger, page transitions, exit animations, scroll, and layout — built on motion-foundations tokens and springs.",
+    "origin": "custom",
+    "path": "~/.claude/skills/motion-patterns/SKILL.md"
+  },
+  {
+    "name": "motion-ui",
+    "description": "\"Production-ready UI motion system for React/Next.js. Use when implementing animations, transitions, or motion patterns.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/motion-ui/SKILL.md"
+  },
+  {
+    "name": "mysql-patterns",
+    "description": "MySQL and MariaDB schema, query, indexing, transaction, replication, and connection-pool patterns for production backends.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/mysql-patterns/SKILL.md"
+  },
+  {
+    "name": "nanoclaw-repl",
+    "description": "Operate and extend NanoClaw v2, ECC's zero-dependency session-aware REPL built on claude -p.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/nanoclaw-repl/SKILL.md"
+  },
+  {
+    "name": "nestjs-patterns",
+    "description": "NestJS architecture patterns for modules, controllers, providers, DTO validation, guards, interceptors, config, and production-grade TypeScript backends.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/nestjs-patterns/SKILL.md"
+  },
+  {
+    "name": "netmiko-ssh-automation",
+    "description": "Safe Python Netmiko patterns for read-only collection, bounded batch SSH, TextFSM parsing, guarded config changes, timeouts, and network automation error handling.",
+    "origin": "community",
+    "path": "~/.claude/skills/netmiko-ssh-automation/SKILL.md"
+  },
+  {
+    "name": "network-bgp-diagnostics",
+    "description": "Diagnostics-only BGP troubleshooting patterns for neighbor state, route exchange, prefix policy, AS path inspection, and safe evidence collection.",
+    "origin": "community",
+    "path": "~/.claude/skills/network-bgp-diagnostics/SKILL.md"
+  },
+  {
+    "name": "network-config-validation",
+    "description": "Pre-deployment checks for router and switch configuration, including dangerous commands, duplicate addresses, subnet overlaps, stale references, management-plane risk, and IOS-style security hygiene.",
+    "origin": "community",
+    "path": "~/.claude/skills/network-config-validation/SKILL.md"
+  },
+  {
+    "name": "network-interface-health",
+    "description": "Diagnose interface errors, drops, CRCs, duplex mismatches, flapping, speed negotiation issues, and counter trends on routers, switches, and Linux hosts.",
+    "origin": "community",
+    "path": "~/.claude/skills/network-interface-health/SKILL.md"
+  },
+  {
+    "name": "nextjs-turbopack",
+    "description": "Next.js 16+ and Turbopack — incremental bundling, FS caching, dev speed, and when to use Turbopack vs webpack.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/nextjs-turbopack/SKILL.md"
+  },
+  {
+    "name": "nodejs-keccak256",
+    "description": "Prevent Ethereum hashing bugs in JavaScript and TypeScript. Node's sha3-256 is NIST SHA3, not Ethereum Keccak-256, and silently breaks selectors, signatures, storage slots, and address derivation.",
+    "origin": "ECC direct-port adaptation",
+    "path": "~/.claude/skills/nodejs-keccak256/SKILL.md"
+  },
+  {
+    "name": "nutrient-document-processing",
+    "description": "Process, convert, OCR, extract, redact, sign, and fill documents using the Nutrient DWS API. Works with PDFs, DOCX, XLSX, PPTX, HTML, and images.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/nutrient-document-processing/SKILL.md"
+  },
+  {
+    "name": "nuxt4-patterns",
+    "description": "Nuxt 4 app patterns for hydration safety, performance, route rules, lazy loading, and SSR-safe data fetching with useFetch and useAsyncData.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/nuxt4-patterns/SKILL.md"
+  },
+  {
+    "name": "openclaw-persona-forge",
+    "description": "\"为 OpenClaw AI Agent 锻造完整的龙虾灵魂方案。根据用户偏好或随机抽卡， 输出身份定位、灵魂描述(SOUL.md)、角色化底线规则、名字和头像生图提示词。 如当前环境提供已审核的生图 skill，可自动生成统一风格头像图片。 当用户需要创建、设计或定制 OpenClaw 龙虾灵魂时使用。 不适用于：微调已有 SOUL.md、非 OpenClaw 平台的角色设计、纯工具型无性格 Agent。 触发词：龙虾灵魂、虾魂、OpenClaw 灵魂、养虾灵魂、龙虾角色、龙虾定位、 龙虾剧本杀角色、龙虾游戏角色、龙虾 NPC、龙虾性格、龙虾背景故事、 lobster soul、lobster character、抽卡、随机龙虾、龙虾 SOUL、gacha。\"",
+    "origin": "community",
+    "path": "~/.claude/skills/openclaw-persona-forge/SKILL.md"
+  },
+  {
+    "name": "opensource-pipeline",
+    "description": "\"Open-source pipeline: fork, sanitize, and package private projects for safe public release. Chains 3 agents (forker, sanitizer, packager). Triggers: '/opensource', 'open source this', 'make this public', 'prepare for open source'.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/opensource-pipeline/SKILL.md"
+  },
+  {
+    "name": "orch-add-feature",
+    "description": "Orchestrate building a brand-new feature end to end — research, plan, TDD implementation, review, and gated commit — by delegating each phase to the matching ECC agent. Use when adding a capability that does not exist yet.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/orch-add-feature/SKILL.md"
+  },
+  {
+    "name": "orch-build-mvp",
+    "description": "Orchestrate bootstrapping a working MVP from a design or spec document — ingest the doc, plan thin vertical slices, scaffold the first end-to-end slice, then TDD-implement, review, and gated commit. Use to turn an SDD/PRD into a running starting point.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/orch-build-mvp/SKILL.md"
+  },
+  {
+    "name": "orch-change-feature",
+    "description": "Orchestrate altering an existing, working feature to new desired behavior — update its tests to the new spec, change the implementation to match, review, and gated commit. Use when behavior is not broken but should be different.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/orch-change-feature/SKILL.md"
+  },
+  {
+    "name": "orch-fix-defect",
+    "description": "Orchestrate fixing a bug — reproduce it as a failing regression test, fix to green, review, and gated commit — by delegating each phase to the matching ECC agent. Use when existing behavior is broken or wrong.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/orch-fix-defect/SKILL.md"
+  },
+  {
+    "name": "orch-pipeline",
+    "description": "Shared orchestration engine for the orch-* skill family. Defines the gated Research-Plan-TDD-Review-Commit pipeline, the size classifier, the agent map, and the two human gates that the orch-* operation skills delegate to. Not usually invoked directly.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/orch-pipeline/SKILL.md"
+  },
+  {
+    "name": "orch-refine-code",
+    "description": "Orchestrate a behavior-preserving refactor — confirm tests are green, restructure without changing behavior, keep tests green, review, and gated commit. Use when the structure should improve but behavior must not change.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/orch-refine-code/SKILL.md"
+  },
+  {
+    "name": "parallel-execution-optimizer",
+    "description": "Use when the user wants a task done much faster through parallel work, concurrent agents, batched tool calls, isolated worktrees, or many independent verification lanes without losing correctness.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/parallel-execution-optimizer/SKILL.md"
+  },
+  {
+    "name": "perl-patterns",
+    "description": "Modern Perl 5.36+ idioms, best practices, and conventions for building robust, maintainable Perl applications.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/perl-patterns/SKILL.md"
+  },
+  {
+    "name": "perl-security",
+    "description": "Comprehensive Perl security covering taint mode, input validation, safe process execution, DBI parameterized queries, web security (XSS/SQLi/CSRF), and perlcritic security policies.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/perl-security/SKILL.md"
+  },
+  {
+    "name": "perl-testing",
+    "description": "Perl testing patterns using Test2::V0, Test::More, prove runner, mocking, coverage with Devel::Cover, and TDD methodology.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/perl-testing/SKILL.md"
+  },
+  {
+    "name": "plan-canvas",
+    "description": "Open plans and HTML artifacts in a local browser canvas where the human annotates elements, chats, and approves or requests changes without leaving the page. Use when presenting a plan for review, or when feedback like \"move this, change that\" is easier pointed at than typed.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/plan-canvas/SKILL.md"
+  },
+  {
+    "name": "plan-orchestrate",
+    "description": "Read a plan document, decompose it into steps, design a per-step agent chain from the ECC catalogue, and emit ready-to-paste /orchestrate custom prompts. Generative only — never invokes /orchestrate itself. Use when the user has a multi-step plan and wants to drive it through orchestrate without composing chains by hand.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/plan-orchestrate/SKILL.md"
+  },
+  {
+    "name": "plankton-code-quality",
+    "description": "\"Write-time code quality enforcement using Plankton — auto-formatting, linting, and Claude-powered fixes on every file edit via hooks.\"",
+    "origin": "community",
+    "path": "~/.claude/skills/plankton-code-quality/SKILL.md"
+  },
+  {
+    "name": "postgres-patterns",
+    "description": "PostgreSQL database patterns for query optimization, schema design, indexing, and security. Based on Supabase best practices.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/postgres-patterns/SKILL.md"
+  },
+  {
+    "name": "prediction-market-oracle-research",
+    "description": "Research prediction markets as data sources or oracle signals for products, agents, dashboards, and corporate decision intelligence. Use for source-grounded analysis of market-implied probabilities, caveats, and integration patterns without investment advice.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/prediction-market-oracle-research/SKILL.md"
+  },
+  {
+    "name": "prediction-market-risk-review",
+    "description": "Review prediction-market, basket, oracle, and trading-agent workflows for compliance, safety, data-quality, privacy, and execution risk. Use before any workflow handles venue auth, user portfolio data, API keys, or trade planning.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/prediction-market-risk-review/SKILL.md"
+  },
+  {
+    "name": "prisma-patterns",
+    "description": "Prisma ORM patterns for TypeScript backends — schema design, query optimization, transactions, pagination, and critical traps like updateMany returning count not records, $transaction timeouts, migrate dev resetting the DB, @updatedAt skipped on bulk writes, and serverless connection exhaustion.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/prisma-patterns/SKILL.md"
+  },
+  {
+    "name": "product-capability",
+    "description": "Translate PRD intent, roadmap asks, or product discussions into an implementation-ready capability plan that exposes constraints, invariants, interfaces, and unresolved decisions before multi-service work starts. Use when the user needs an ECC-native PRD-to-SRS lane instead of vague planning prose.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/product-capability/SKILL.md"
+  },
+  {
+    "name": "product-lens",
+    "description": "Use this skill to validate the \"why\" before building, run product diagnostics, and pressure-test product direction before the request becomes an implementation contract.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/product-lens/SKILL.md"
+  },
+  {
+    "name": "production-audit",
+    "description": "Local-evidence production readiness audit for shipped apps, pre-launch reviews, post-merge checks, and \"what breaks in prod?\" questions without sending repo data to an external audit service.",
+    "origin": "community",
+    "path": "~/.claude/skills/production-audit/SKILL.md"
+  },
+  {
+    "name": "production-scheduling",
+    "description": "> Codified expertise for production scheduling, job sequencing, line balancing, changeover optimization, and bottleneck resolution in discrete and batch manufacturing. Informed by production schedulers with 15+ years experience. Includes TOC/drum-buffer-rope, SMED, OEE analysis, disruption response frameworks, and ERP/MES interaction patterns. Use when scheduling production, resolving bottlenecks, optimizing changeovers, responding to disruptions, or balancing manufacturing lines.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/production-scheduling/SKILL.md"
+  },
+  {
+    "name": "project-flow-ops",
+    "description": "Operate execution flow across GitHub and Linear by triaging issues and pull requests, linking active work, and keeping GitHub public-facing while Linear remains the internal execution layer. Use when the user wants backlog control, PR triage, or GitHub-to-Linear coordination.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/project-flow-ops/SKILL.md"
+  },
+  {
+    "name": "prompt-optimizer",
+    "description": ">- Analyze raw prompts, identify intent and gaps, match ECC components (skills/commands/agents/hooks), and output a ready-to-paste optimized prompt. Advisory role only — never executes the task itself. TRIGGER when: user says \"optimize prompt\", \"improve my prompt\", \"how to write a prompt for\", \"help me prompt\", \"rewrite this prompt\", or explicitly asks to enhance prompt quality. Also triggers on Chinese equivalents: \"优化prompt\", \"改进prompt\", \"怎么写prompt\", \"帮我优化这个指令\". DO NOT TRIGGER when: user wants the task executed directly, or says \"just do it\" / \"直接做\". DO NOT TRIGGER when user says \"优化代码\", \"优化性能\", \"optimize performance\", \"optimize this code\" — those are refactoring/performance tasks, not prompt optimization.",
+    "origin": "community",
+    "path": "~/.claude/skills/prompt-optimizer/SKILL.md"
+  },
+  {
+    "name": "python-patterns",
+    "description": "Pythonic idioms, PEP 8 standards, type hints, and best practices for building robust, efficient, and maintainable Python applications.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/python-patterns/SKILL.md"
+  },
+  {
+    "name": "python-testing",
+    "description": "Python testing strategies using pytest, TDD methodology, fixtures, mocking, parametrization, and coverage requirements.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/python-testing/SKILL.md"
+  },
+  {
+    "name": "pytorch-patterns",
+    "description": "PyTorch deep learning patterns and best practices for building robust, efficient, and reproducible training pipelines, model architectures, and data loading.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/pytorch-patterns/SKILL.md"
+  },
+  {
+    "name": "quality-nonconformance",
+    "description": "> Codified expertise for quality control, non-conformance investigation, root cause analysis, corrective action, and supplier quality management in regulated manufacturing. Informed by quality engineers with 15+ years experience across FDA, IATF 16949, and AS9100 environments. Includes NCR lifecycle management, CAPA systems, SPC interpretation, and audit methodology. Use when investigating non-conformances, performing root cause analysis, managing CAPAs, interpreting SPC data, or handling supplier quality issues.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/quality-nonconformance/SKILL.md"
+  },
+  {
+    "name": "quarkus-patterns",
+    "description": "Quarkus 3.x LTS architecture patterns with Camel for messaging, RESTful API design, CDI services, data access with Panache, and async processing. Use for Java Quarkus backend work with event-driven architectures.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/quarkus-patterns/SKILL.md"
+  },
+  {
+    "name": "quarkus-security",
+    "description": "Quarkus Security best practices for authentication, authorization, JWT/OIDC, RBAC, input validation, CSRF, secrets management, and dependency security.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/quarkus-security/SKILL.md"
+  },
+  {
+    "name": "quarkus-tdd",
+    "description": "Test-driven development for Quarkus 3.x LTS using JUnit 5, Mockito, REST Assured, Camel testing, and JaCoCo. Use when adding features, fixing bugs, or refactoring event-driven services.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/quarkus-tdd/SKILL.md"
+  },
+  {
+    "name": "quarkus-verification",
+    "description": "\"Verification loop for Quarkus projects: build, static analysis, tests with coverage, security scans, native compilation, and diff review before release or PR.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/quarkus-verification/SKILL.md"
+  },
+  {
+    "name": "ralphinho-rfc-pipeline",
+    "description": "RFC-driven multi-agent DAG execution pattern with quality gates, merge queues, and work unit orchestration.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ralphinho-rfc-pipeline/SKILL.md"
+  },
+  {
+    "name": "react-native-patterns",
+    "description": "React Native and Expo app patterns — Expo Router navigation, state separation (server/client/route/form), TanStack Query data fetching with Zod, performant lists, NativeWind/StyleSheet styling, native APIs, and secure storage. Use when building or editing React Native / Expo screens, components, navigation, or data layers.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/react-native-patterns/SKILL.md"
+  },
+  {
+    "name": "react-patterns",
+    "description": "React 18/19 patterns including hooks discipline, server/client component boundaries, Suspense + error boundaries, form actions, data fetching, state management decision trees, and accessibility-first composition. Use when writing or reviewing React components.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/react-patterns/SKILL.md"
+  },
+  {
+    "name": "react-performance",
+    "description": "React and Next.js performance optimization patterns adapted from Vercel Engineering's React Best Practices (https://github.com/vercel-labs/agent-skills). Organizes 70+ rules across 8 priority categories — waterfalls, bundle size, server-side, client fetching, re-render, rendering, JS micro-perf, advanced. Use when writing, reviewing, or refactoring React/Next.js code for performance.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/react-performance/SKILL.md"
+  },
+  {
+    "name": "react-testing",
+    "description": "React component testing with React Testing Library, Vitest/Jest, MSW for network mocking, accessibility assertions with axe, and the decision boundary between component tests and Playwright/Cypress end-to-end runs. Use when writing or fixing tests for React components, hooks, or pages.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/react-testing/SKILL.md"
+  },
+  {
+    "name": "recsys-pipeline-architect",
+    "description": "Design composable recommendation, ranking, and feed pipelines using the six-stage Source→Hydrator→Filter→Scorer→Selector→SideEffect framework popularized by xAI's open-sourced For You algorithm. Use this skill whenever the user is building any system that picks \"the top K items for a (user, context)\" — social feeds, content CMSs, RAG rerankers, task prioritizers, notification triage, search reranking, ad ranking.",
+    "origin": "community",
+    "path": "~/.claude/skills/recsys-pipeline-architect/SKILL.md"
+  },
+  {
+    "name": "recursive-decision-ledger",
+    "description": "Use when the user asks for repeated rollouts, marked decision processes, high-dimensional search, stochastic optimization, local-optima exploration, ensemble comparison, or recursive reasoning with a visible evidence trail.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/recursive-decision-ledger/SKILL.md"
+  },
+  {
+    "name": "redis-patterns",
+    "description": "Redis data structure patterns, caching strategies, distributed locks, rate limiting, pub/sub, and connection management for production applications.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/redis-patterns/SKILL.md"
+  },
+  {
+    "name": "regex-vs-llm-structured-text",
+    "description": "Decision framework for choosing between regex and LLM when parsing structured text — start with regex, add LLM only for low-confidence edge cases.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/regex-vs-llm-structured-text/SKILL.md"
+  },
+  {
+    "name": "remotion-video-creation",
+    "description": "Best practices for Remotion - Video creation in React. 29 domain-specific rules covering 3D, animations, audio, captions, charts, transitions, and more.",
+    "origin": "custom",
+    "path": "~/.claude/skills/remotion-video-creation/SKILL.md"
+  },
+  {
+    "name": "repo-scan",
+    "description": "Cross-stack source code asset audit — classifies every file, detects embedded third-party libraries, and delivers actionable four-level verdicts per module with interactive HTML reports.",
+    "origin": "community",
+    "path": "~/.claude/skills/repo-scan/SKILL.md"
+  },
+  {
+    "name": "research-ops",
+    "description": "Evidence-first current-state research workflow for ECC. Use when the user wants fresh facts, comparisons, enrichment, or a recommendation built from current public evidence and any supplied local context.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/research-ops/SKILL.md"
+  },
+  {
+    "name": "returns-reverse-logistics",
+    "description": "> Codified expertise for returns authorization, receipt and inspection, disposition decisions, refund processing, fraud detection, and warranty claims management. Informed by returns operations managers with 15+ years experience. Includes grading frameworks, disposition economics, fraud pattern recognition, and vendor recovery processes. Use when handling product returns, reverse logistics, refund decisions, return fraud detection, or warranty claims.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/returns-reverse-logistics/SKILL.md"
+  },
+  {
+    "name": "rules-distill",
+    "description": "\"Scan skills to extract cross-cutting principles and distill them into rules — append, revise, or create new rule files\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/rules-distill/SKILL.md"
+  },
+  {
+    "name": "rust-engineering-master",
+    "description": "\"Sistema Integrado Mestre de Engenharia Rust: Arquitetura, Memory Safety, Concorrência, Performance, Error Handling, Unsafe Soundness, Fuzzing e Code Review\"",
+    "origin": "Master-Engineering-Prompt",
+    "path": "~/.claude/skills/rust-engineering-master/SKILL.md"
+  },
+  {
+    "name": "rust-patterns",
+    "description": "Idiomatic Rust patterns, ownership, error handling, traits, concurrency, and best practices for building safe, performant applications.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/rust-patterns/SKILL.md"
+  },
+  {
+    "name": "rust-testing",
+    "description": "Rust testing patterns including unit tests, integration tests, async testing, property-based testing, mocking, and coverage. Follows TDD methodology.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/rust-testing/SKILL.md"
+  },
+  {
+    "name": "safety-guard",
+    "description": "Use this skill to prevent destructive operations when working on production systems or running agents autonomously.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/safety-guard/SKILL.md"
+  },
+  {
+    "name": "santa-method",
+    "description": "\"Multi-agent adversarial verification with convergence loop. Two independent review agents must both pass before output ships.\"",
+    "origin": "\"Ronald Skelton - Founder, RapportScore.ai\"",
+    "path": "~/.claude/skills/santa-method/SKILL.md"
+  },
+  {
+    "name": "scientific-db-pubmed-database",
+    "description": "Direct PubMed and NCBI E-utilities search workflows for biomedical literature, MeSH queries, PMID lookup, citation retrieval, and API-backed literature monitoring.",
+    "origin": "community",
+    "path": "~/.claude/skills/scientific-db-pubmed-database/SKILL.md"
+  },
+  {
+    "name": "scientific-db-uspto-database",
+    "description": "USPTO patent and trademark data workflow for official record lookup, PatentSearch queries, TSDR checks, assignment data, and reproducible IP research logs.",
+    "origin": "community",
+    "path": "~/.claude/skills/scientific-db-uspto-database/SKILL.md"
+  },
+  {
+    "name": "scientific-pkg-gget",
+    "description": "gget CLI and Python workflow for quick genomic database queries, sequence lookup, BLAST-style searches, enrichment checks, and reproducible bioinformatics evidence logs.",
+    "origin": "community",
+    "path": "~/.claude/skills/scientific-pkg-gget/SKILL.md"
+  },
+  {
+    "name": "scientific-thinking-literature-review",
+    "description": "Systematic literature-review workflow for academic, biomedical, technical, and scientific topics, including search planning, source screening, synthesis, citation checks, and evidence logging.",
+    "origin": "community",
+    "path": "~/.claude/skills/scientific-thinking-literature-review/SKILL.md"
+  },
+  {
+    "name": "scientific-thinking-scholar-evaluation",
+    "description": "Structured scholarly-work evaluation for papers, proposals, literature reviews, methods sections, evidence quality, citation support, and research-writing feedback.",
+    "origin": "community",
+    "path": "~/.claude/skills/scientific-thinking-scholar-evaluation/SKILL.md"
+  },
+  {
+    "name": "search-first",
+    "description": "Research-before-coding workflow. Search for existing tools, libraries, and patterns before writing custom code. Invokes the researcher agent.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/search-first/SKILL.md"
+  },
+  {
+    "name": "security-bounty-hunter",
+    "description": "Hunt for exploitable, bounty-worthy security issues in repositories. Focuses on remotely reachable vulnerabilities that qualify for real reports instead of noisy local-only findings.",
+    "origin": "ECC direct-port adaptation",
+    "path": "~/.claude/skills/security-bounty-hunter/SKILL.md"
+  },
+  {
+    "name": "security-review",
+    "description": "Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. Provides comprehensive security checklist and patterns.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/security-review/SKILL.md"
+  },
+  {
+    "name": "security-scan",
+    "description": "Scan your Claude Code configuration (.claude/ directory) for security vulnerabilities, misconfigurations, and injection risks using AgentShield. Checks CLAUDE.md, settings.json, MCP servers, hooks, and agent definitions.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/security-scan/SKILL.md"
+  },
+  {
+    "name": "seo",
+    "description": "Audit, plan, and implement SEO improvements across technical SEO, on-page optimization, structured data, Core Web Vitals, and content strategy. Use when the user wants better search visibility, SEO remediation, schema markup, sitemap/robots work, or keyword mapping.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/seo/SKILL.md"
+  },
+  {
+    "name": "skill-scout",
+    "description": "Search existing local, marketplace, GitHub, and web skill sources before creating a new skill. Use when the user wants to create, build, fork, or find a skill for a workflow.",
+    "origin": "community",
+    "path": "~/.claude/skills/skill-scout/SKILL.md"
+  },
+  {
+    "name": "skill-stocktake",
+    "description": "\"Use when auditing Claude skills and commands for quality. Supports Quick Scan (changed skills only) and Full Stocktake modes with sequential subagent batch evaluation.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/skill-stocktake/SKILL.md"
+  },
+  {
+    "name": "social-graph-ranker",
+    "description": "Weighted social-graph ranking for warm intro discovery, bridge scoring, and network gap analysis across X and LinkedIn. Use when the user wants the reusable graph-ranking engine itself, not the broader outreach or network-maintenance workflow layered on top of it.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/social-graph-ranker/SKILL.md"
+  },
+  {
+    "name": "social-publisher",
+    "description": "Agent-driven scheduling and publishing of social media posts across 13 platforms via SocialClaw. Use when the user wants to publish to X, LinkedIn, Instagram, Facebook Pages, TikTok, Discord, Telegram, YouTube, Reddit, WordPress, or Pinterest — or when managing campaigns, uploading media, or monitoring post delivery status.",
+    "origin": "community",
+    "path": "~/.claude/skills/social-publisher/SKILL.md"
+  },
+  {
+    "name": "springboot-patterns",
+    "description": "Spring Boot architecture patterns, REST API design, layered services, data access, caching, async processing, and logging. Use for Java Spring Boot backend work.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/springboot-patterns/SKILL.md"
+  },
+  {
+    "name": "springboot-security",
+    "description": "Spring Security best practices for authn/authz, validation, CSRF, secrets, headers, rate limiting, and dependency security in Java Spring Boot services.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/springboot-security/SKILL.md"
+  },
+  {
+    "name": "springboot-tdd",
+    "description": "Test-driven development for Spring Boot using JUnit 5, Mockito, MockMvc, Testcontainers, and JaCoCo. Use when adding features, fixing bugs, or refactoring.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/springboot-tdd/SKILL.md"
+  },
+  {
+    "name": "springboot-verification",
+    "description": "\"Verification loop for Spring Boot projects: build, static analysis, tests with coverage, security scans, and diff review before release or PR.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/springboot-verification/SKILL.md"
+  },
+  {
+    "name": "strategic-compact",
+    "description": "Suggests manual context compaction at logical intervals to preserve context through task phases rather than arbitrary auto-compaction.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/strategic-compact/SKILL.md"
+  },
+  {
+    "name": "swift-actor-persistence",
+    "description": "Thread-safe data persistence in Swift using actors — in-memory cache with file-backed storage, eliminating data races by design.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/swift-actor-persistence/SKILL.md"
+  },
+  {
+    "name": "swift-concurrency-6-2",
+    "description": "Swift 6.2 Approachable Concurrency — single-threaded by default, @concurrent for explicit background offloading, isolated conformances for main actor types. --- # Swift 6.2 Approachable Concurrency Patterns for adopting Swift 6.2's concurrency model where code runs single-threaded by default and concurrency is introduced explicitly. Eliminates common data-race errors without sacrificing performance. ## When to Activate - Migrating Swift 5.x or 6.0/6.1 projects to Swift 6.2 - Resolving data-race safety compiler errors - Designing MainActor-based app architecture - Offloading CPU-intensive work to background threads - Implementing protocol conformances on MainActor-isolated types - Enabling Approachable Concurrency build settings in Xcode 26 ## Core Problem: Implicit Background Offloading In Swift 6.1 and earlier, async functions could be implicitly offloaded to background threads, causing data-race errors even in seemingly safe code: ```swift // Swift 6.1: ERROR @MainActor final class StickerModel { let photoProcessor = PhotoProcessor() func extractSticker(_ item: PhotosPickerItem) async throws -> Sticker? { guard let data = try await item.loadTransferable(type: Data.self) else { return nil } // Error: Sending 'self.photoProcessor' risks causing data races return await photoProcessor.extractSticker(data: data, with: item.itemIdentifier) } } ``` Swift 6.2 fixes this: async functions stay on the calling actor by default. ```swift // Swift 6.2: OK — async stays on MainActor, no data race @MainActor final class StickerModel { let photoProcessor = PhotoProcessor() func extractSticker(_ item: PhotosPickerItem) async throws -> Sticker? { guard let data = try await item.loadTransferable(type: Data.self) else { return nil } return await photoProcessor.extractSticker(data: data, with: item.itemIdentifier) } } ``` ## Core Pattern — Isolated Conformances MainActor types can now conform to non-isolated pro",
+    "origin": "custom",
+    "path": "~/.claude/skills/swift-concurrency-6-2/SKILL.md"
+  },
+  {
+    "name": "swift-protocol-di-testing",
+    "description": "Protocol-based dependency injection for testable Swift code — mock file system, network, and external APIs using focused protocols and Swift Testing.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/swift-protocol-di-testing/SKILL.md"
+  },
+  {
+    "name": "swiftui-patterns",
+    "description": "SwiftUI architecture patterns, state management with @Observable, view composition, navigation, performance optimization, and modern iOS/macOS UI best practices. --- # SwiftUI Patterns Modern SwiftUI patterns for building declarative, performant user interfaces on Apple platforms. Covers the Observation framework, view composition, type-safe navigation, and performance optimization. ## When to Activate - Building SwiftUI views and managing state (`@State`, `@Observable`, `@Binding`) - Designing navigation flows with `NavigationStack` - Structuring view models and data flow - Optimizing rendering performance for lists and complex layouts - Working with environment values and dependency injection in SwiftUI ## State Management ### Property Wrapper Selection Choose the simplest wrapper that fits: | Wrapper | Use Case | |---------|----------| | `@State` | View-local value types (toggles, form fields, sheet presentation) | | `@Binding` | Two-way reference to parent's `@State` | | `@Observable` class + `@State` | Owned model with multiple properties | | `@Observable` class (no wrapper) | Read-only reference passed from parent | | `@Bindable` | Two-way binding to an `@Observable` property | | `@Environment` | Shared dependencies injected via `.environment()` | ### @Observable ViewModel Use `@Observable` (not `ObservableObject`) — it tracks property-level changes so SwiftUI only re-renders views that read the changed property: ```swift @Observable final class ItemListViewModel { private(set) var items: [Item] = [] private(set) var isLoading = false var searchText = \"\" private let repository: any ItemRepository init(repository: any ItemRepository = DefaultItemRepository()) { self.repository = repository } func load() async { isLoading = true defer { isLoading = false } items = (try? await repository.fetchAll()) ?? [] } } ``` ### View Consuming the ViewModel ```swift struct ItemListView: View { @State",
+    "origin": "custom",
+    "path": "~/.claude/skills/swiftui-patterns/SKILL.md"
+  },
+  {
+    "name": "taste",
+    "description": "A creative-direction (taste) layer for music videos and short-form edits in the angelcore / cloud-trance / hyperpop visual family. Distills a named-genre aesthetic vocabulary, a mood + color + light system, and a beat-synced editing grammar, then chains ECC's video skills (video-editing, fal-ai-media, remotion-video-creation, motion-*, content-engine) into one production pipeline. Use when the work is not just making a video function but making it feel intentional, when building a music video, a fancam/edit, a moodboard-driven reel, or when choosing a coherent visual direction for AI-generated b-roll.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/taste/SKILL.md"
+  },
+  {
+    "name": "tdd-workflow",
+    "description": "Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/tdd-workflow/SKILL.md"
+  },
+  {
+    "name": "team-agent-orchestration",
+    "description": "\"Run team-based orchestration for agent squads using work items, ownership, agent Kanban, merge gates, and control pane handoffs.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/team-agent-orchestration/SKILL.md"
+  },
+  {
+    "name": "team-builder",
+    "description": "Interactive agent picker for composing and dispatching parallel teams",
+    "origin": "community",
+    "path": "~/.claude/skills/team-builder/SKILL.md"
+  },
+  {
+    "name": "terminal-ops",
+    "description": "Evidence-first repo execution workflow for ECC. Use when the user wants a command run, a repo checked, a CI failure debugged, or a narrow fix pushed with exact proof of what was executed and verified.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/terminal-ops/SKILL.md"
+  },
+  {
+    "name": "tinystruct-patterns",
+    "description": "Expert guidance for developing with the tinystruct Java framework. Use when working on the tinystruct codebase or any project built on tinystruct — including creating Application classes, @Action-mapped routes, unit tests, ActionRegistry, HTTP/CLI dual-mode handling, the built-in HTTP server, the event system, JSON with Builder/Builders, database persistence with AbstractData, POJO generation, Server-Sent Events (SSE), file uploads, and outbound HTTP networking.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/tinystruct-patterns/SKILL.md"
+  },
+  {
+    "name": "token-budget-advisor",
+    "description": ">- Offers the user an informed choice about how much response depth to consume before answering. Use this skill when the user explicitly wants to control response length, depth, or token budget. TRIGGER when: \"token budget\", \"token count\", \"token usage\", \"token limit\", \"response length\", \"answer depth\", \"short version\", \"brief answer\", \"detailed answer\", \"exhaustive answer\", \"respuesta corta vs larga\", \"cuántos tokens\", \"ahorrar tokens\", \"responde al 50%\", \"dame la versión corta\", \"quiero controlar cuánto usas\", or clear variants where the user is explicitly asking to control answer size or depth. DO NOT TRIGGER when: user has already specified a level in the current session (maintain it), the request is clearly a one-word answer, or \"token\" refers to auth/session/payment tokens rather than response size.",
+    "origin": "community",
+    "path": "~/.claude/skills/token-budget-advisor/SKILL.md"
+  },
+  {
+    "name": "ui-demo",
+    "description": "Record polished UI demo videos using Playwright. Use when the user asks to create a demo, walkthrough, screen recording, or tutorial video of a web application. Produces WebM videos with visible cursor, natural pacing, and professional feel.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/ui-demo/SKILL.md"
+  },
+  {
+    "name": "ui-to-vue",
+    "description": "Use when the user has UI screenshots or design exports that need batch conversion into Vue 3 components, especially with Vant, Element Plus, or Ant Design Vue.",
+    "origin": "community",
+    "path": "~/.claude/skills/ui-to-vue/SKILL.md"
+  },
+  {
+    "name": "uncloud",
+    "description": "Use when managing an Uncloud cluster — deploying services, configuring Caddy ingress, adding static proxy routes for non-cluster devices, publishing ports, scaling, inspecting logs, or managing machines and volumes with the `uc` CLI.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/uncloud/SKILL.md"
+  },
+  {
+    "name": "unified-memory",
+    "description": "Share durable, inspectable context and handoffs between Claude, Codex, Hermes, Cursor, OpenCode, and other agents through the local ECC Memory Vault. Use when an agent must save work state, transfer context, resume another agent's task, or search shared project knowledge.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/unified-memory/SKILL.md"
+  },
+  {
+    "name": "unified-notifications-ops",
+    "description": "Operate notifications as one ECC-native workflow across GitHub, Linear, desktop alerts, hooks, and connected communication surfaces. Use when the real problem is alert routing, deduplication, escalation, or inbox collapse.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/unified-notifications-ops/SKILL.md"
+  },
+  {
+    "name": "unity-mcp-skill",
+    "description": "Orchestrate Unity Editor via MCP (Model Context Protocol) tools and resources. Use when working with Unity projects through MCP for Unity - creating/modifying GameObjects, editing scripts, managing scenes, running tests, or any Unity Editor automation. Provides best practices, tool schemas, and workflow patterns for effective Unity-MCP integration. --- # Unity-MCP Operator Guide This skill helps you effectively use the Unity Editor with MCP tools and resources. ## Template Notice Examples in `references/workflows.md` and `references/tools-reference.md` are reusable templates. They may be inaccurate across Unity versions, package setups (UGUI/TMP/Input System), and project-specific conventions. Please check console, compilation errors, or use screenshot after implementation. Before applying a template: - Validate targets/components first via resources and `find_gameobjects`. - Treat names, enum values, and property payloads as placeholders to adapt. ## Quick Start: Resource-First Workflow **Always read relevant resources before using tools.** This prevents errors and provides the necessary context. ``` 1. Check editor state → mcpforunity://editor/state 2. Understand the scene → mcpforunity://scene/gameobject-api 3. Find what you need → find_gameobjects or resources 4. Take action → tools (manage_gameobject, create_script, script_apply_edits, apply_text_edits, validate_script, delete_script, get_sha, etc.) 5. Verify results → read_console, manage_camera(action=\"screenshot\"), resources ``` **If a tool you need is not in your tool list, it is not necessarily missing.** Check these before troubleshooting the connection: - **Project custom tools** (C# `[McpForUnityTool]`): with project-scoped tools enabled on the server, they are *not* callable by name. List them via `mcpforunity://custom-tools` and run them with `execute_custom_tool(tool_name=\"...\", parameters={...})`. With it disabled, they are registered as ordinary tools and appear",
+    "origin": "custom",
+    "path": "~/.claude/skills/unity-mcp-skill/SKILL.md"
+  },
+  {
+    "name": "verification-loop",
+    "description": "\"A comprehensive verification system for Claude Code sessions.\"",
+    "origin": "ECC",
+    "path": "~/.claude/skills/verification-loop/SKILL.md"
+  },
+  {
+    "name": "video-editing",
+    "description": "AI-assisted video editing workflows for cutting, structuring, and augmenting real footage. Covers the full pipeline from raw capture through FFmpeg, Remotion, ElevenLabs, fal.ai, and final polish in Descript or CapCut. Use when the user wants to edit video, cut footage, create vlogs, or build video content.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/video-editing/SKILL.md"
+  },
+  {
+    "name": "videodb",
+    "description": "See, Understand, Act on video and audio. See- ingest from local files, URLs, RTSP/live feeds, or live record desktop; return realtime context and playable stream links. Understand- extract frames, build visual/semantic/temporal indexes, and search moments with timestamps and auto-clips. Act- transcode and normalize (codec, fps, resolution, aspect ratio), perform timeline edits (subtitles, text/image overlays, branding, audio overlays, dubbing, translation), generate media assets (image, audio, video), and create real time alerts for events from live streams or desktop capture.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/videodb/SKILL.md"
+  },
+  {
+    "name": "visa-doc-translate",
+    "description": "Translate visa application documents (images) to English and create a bilingual PDF with original and translation --- You are helping translate visa application documents for visa applications. ## Instructions When the user provides an image file path, AUTOMATICALLY execute the following steps WITHOUT asking for confirmation: 1. **Image Conversion**: If the file is HEIC, convert it to PNG using `sips -s format png <input> --out <output>` 2. **Image Rotation**: - Check EXIF orientation data - Automatically rotate the image based on EXIF data - If EXIF orientation is 6, rotate 90 degrees counterclockwise - Apply additional rotation as needed (test 180 degrees if document appears upside down) 3. **OCR Text Extraction**: - Try multiple OCR methods automatically: - macOS Vision framework (preferred for macOS) - EasyOCR (cross-platform, no tesseract required) - Tesseract OCR (if available) - Extract all text information from the document - Identify document type (deposit certificate, employment certificate, retirement certificate, etc.) 4. **Translation**: - Translate all text content to English professionally - Maintain the original document structure and format - Use professional terminology appropriate for visa applications - Keep proper names in original language with English in parentheses - For Chinese names, use pinyin format (e.g., WU Zhengye) - Preserve all numbers, dates, and amounts accurately 5. **PDF Generation**: - Create a Python script using PIL and reportlab libraries - Page 1: Display the rotated original image, centered and scaled to fit A4 page - Page 2: Display the English translation with proper formatting: - Title centered and bold - Content left-aligned with appropriate spacing - Professional layout suitable for official documents - Add a note at the bottom: \"This is a certified English translation of the original document\" - Execute the script to generate the PDF",
+    "origin": "custom",
+    "path": "~/.claude/skills/visa-doc-translate/SKILL.md"
+  },
+  {
+    "name": "vite-patterns",
+    "description": "Vite build tool patterns including config, plugins, HMR, env variables, proxy setup, SSR, library mode, dependency pre-bundling, and build optimization. Activate when working with vite.config.ts, Vite plugins, or Vite-based projects.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/vite-patterns/SKILL.md"
+  },
+  {
+    "name": "vue-patterns",
+    "description": "Vue.js 3 Composition API patterns, component architecture, reactivity best practices, Pinia state management, Vue Router navigation, and Nuxt SSR patterns. Activates for Vue, Nuxt, Vite, or Pinia projects.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/vue-patterns/SKILL.md"
+  },
+  {
+    "name": "windows-desktop-e2e",
+    "description": "E2E testing for Windows native desktop apps (WPF, WinForms, Win32/MFC, Qt) using pywinauto and Windows UI Automation.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/windows-desktop-e2e/SKILL.md"
+  },
+  {
+    "name": "workspace-surface-audit",
+    "description": "Audit the active repo, MCP servers, plugins, connectors, env surfaces, and harness setup, then recommend the highest-value ECC-native skills, hooks, agents, and operator workflows. Use when the user wants help setting up Claude Code or understanding what capabilities are actually available in their environment.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/workspace-surface-audit/SKILL.md"
+  },
+  {
+    "name": "x-api",
+    "description": "X/Twitter API integration for posting tweets, threads, reading timelines, search, and analytics. Covers OAuth auth patterns, rate limits, and platform-native content posting. Use when the user wants to interact with X programmatically.",
+    "origin": "ECC",
+    "path": "~/.claude/skills/x-api/SKILL.md"
+  }
+]
