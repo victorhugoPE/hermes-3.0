@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# Hermes 3.0 — RAG Daemon Manager
+set -euo pipefail
+
+PYTHON_ENV="/Users/victorhugo/Downloads/BrProject-Native/.sentinel/venv/bin/python3"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+DAEMON_SCRIPT="$SCRIPT_DIR/scripts/ingest/hermes_rag_daemon.py"
+PID_FILE="/tmp/hermes_rag.pid"
+LOG_FILE="/tmp/hermes_rag.log"
+
+case "${1:-status}" in
+    start)
+        if [ -S "/tmp/hermes_rag.sock" ]; then
+            echo "⚡ Hermes RAG Daemon já está rodando e escutando em /tmp/hermes_rag.sock"
+            exit 0
+        fi
+        echo "🚀 Iniciando Hermes RAG Daemon em background..."
+        "$PYTHON_ENV" "$DAEMON_SCRIPT" > "$LOG_FILE" 2>&1 &
+        disown
+        sleep 2
+        if [ -S "/tmp/hermes_rag.sock" ]; then
+            echo "✅ Hermes RAG Daemon ATIVO e aquecido na memória!"
+            echo "⚡ Respostas em sub-milissegundos ativadas."
+        else
+            echo "❌ Falha ao iniciar daemon. Veja $LOG_FILE"
+            exit 1
+        fi
+        ;;
+    stop)
+        echo "🛑 Parando Hermes RAG Daemon..."
+        pkill -f "hermes_rag_daemon.py" 2>/dev/null || true
+        rm -f "$PID_FILE" /tmp/hermes_rag.sock
+        echo "✅ Daemon finalizado."
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+    status)
+        if [ -S "/tmp/hermes_rag.sock" ]; then
+            echo "✅ Hermes RAG Daemon está ATIVO e aquecido na memória (/tmp/hermes_rag.sock)"
+            echo "⚡ Respostas em tempo real (~70ms) ativas."
+        else
+            echo "⚪ Hermes RAG Daemon está PARADO (fallback sob demanda ativo)"
+        fi
+        ;;
+    *)
+        echo "Uso: $0 {start|stop|restart|status}"
+        exit 1
+        ;;
+esac

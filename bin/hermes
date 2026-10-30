@@ -10,4 +10,9 @@ if [ ! -f "$JAR_PATH" ]; then
     exit 1
 fi
 
+if [ "${1:-}" = "--query" ]; then
+    shift
+    exec python3 "$SCRIPT_DIR/scripts/ingest/hermes_fast_query.py" "$@"
+fi
+
 exec java -jar "$JAR_PATH" "$@"

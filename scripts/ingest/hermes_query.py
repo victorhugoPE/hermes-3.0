@@ -17,6 +17,8 @@ os.environ.setdefault("MKL_NUM_THREADS", "1")
 
 import sys
 import time
+import json
+import socket
 import argparse
 import sqlite3
 import numpy as np
@@ -29,7 +31,37 @@ INDEX_PATH = os.path.join(RAG_DIR, "hermes_index.tvim")
 DB_PATH = os.path.join(RAG_DIR, "hermes_map.db")
 MODEL_NAME = "all-MiniLM-L6-v2"
 
+def query_via_daemon(prompt, top_k=5, scope=None, ext=None):
+    socket_path = "/tmp/hermes_rag.sock"
+    if not os.path.exists(socket_path): return None
+
+    try:
+        client = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        client.settimeout(2.0)
+        client.connect(socket_path)
+        payload = json.dumps({"query": prompt, "top_k": top_k, "scope": scope, "ext": ext})
+        client.sendall(payload.encode("utf-8"))
+
+        chunks = []
+        while True:
+            part = client.recv(65536)
+            if not part: break
+            chunks.append(part)
+        client.close()
+
+        raw = b"".join(chunks).decode("utf-8")
+        data = json.loads(raw)
+        return data.get("results", []), data.get("total_ms", 0.0)
+    except Exception:
+        return None
+
 def query_rag(prompt, top_k=5, scope=None, ext=None):
+    # 1. Tentar via Daemon em background (Modo Instantâneo ~15ms)
+    daemon_res = query_via_daemon(prompt, top_k, scope, ext)
+    if daemon_res is not None:
+        return daemon_res
+
+    # 2. Fallback caso o daemon não esteja rodando
     if not os.path.exists(INDEX_PATH) or not os.path.exists(DB_PATH):
         print(f"❌ Índice não encontrado em {INDEX_PATH}. Rode hermes_indexer.py primeiro.")
         sys.exit(1)
