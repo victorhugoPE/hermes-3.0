@@ -82,6 +82,62 @@ fun main(args: Array<String>) {
             println("⚡ DeepSearch concluído em ${elapsed}ms com segurança total de ciclo e watchdog.")
         }
 
+        "--research" -> {
+            val topic = args.getOrNull(1) ?: run {
+                println("❌ Erro: informe o tema. Ex: --research \"decodificacao de pacotes\" --repos client-l2-code,servers-java-kt")
+                return
+            }
+            var reposArg = "client-l2-code,servers-java-kt"
+            if (args.size >= 4 && args[2] == "--repos") {
+                reposArg = args[3]
+            }
+            val parts = reposArg.split(",").map { it.trim() }
+            val scopeA = parts.getOrNull(0) ?: "client-l2-code"
+            val scopeB = parts.getOrNull(1) ?: "servers-java-kt"
+
+            println("🤖 Despachando 2 Agentes Paralelos via ResearchOrchestrator...")
+            println("   • Tema: '$topic'")
+            println("   • Agente A -> Escopo: $scopeA")
+            println("   • Agente B -> Escopo: $scopeB")
+            println("   • Blackboard Concorrente e Watchdog ativos.\n")
+
+            val orchestrator = br.com.hermes.search.ResearchOrchestrator()
+            kotlinx.coroutines.runBlocking {
+                val t0 = System.currentTimeMillis()
+                val plan = br.com.hermes.search.ResearchPlan(
+                    topic = topic,
+                    primaryScope = scopeA,
+                    secondaryScope = scopeB,
+                    maxStepsPerAgent = 6,
+                    timeoutPerAgentMs = 25_000L
+                )
+                val report = orchestrator.executeParallelResearch(plan)
+                val elapsed = System.currentTimeMillis() - t0
+
+                println("=".repeat(70))
+                println(report.markdownSummary)
+                println("=".repeat(70))
+                println("\n📊 Log do Blackboard Compartilhado:")
+                println(orchestrator.blackboard.getFormattedSummary())
+                println("\n🏁 Pesquisa concorrente concluída em ${elapsed}ms!")
+            }
+        }
+
+        "--sync-file" -> {
+            val filePath = args.getOrNull(1) ?: run {
+                println("❌ Erro: informe o caminho do arquivo. Ex: --sync-file crates/l2-net/src/lib.rs --scope client-l2-code")
+                return
+            }
+            val scope = if (args.size >= 4 && args[2] == "--scope") args[3] else "general"
+            println("⚡ Sincronizando incrementalmente: '$filePath' [Escopo: $scope]...")
+            val success = br.com.hermes.rag.IncrementalIndexer.upsertFile(java.io.File(filePath), scope)
+            if (success) {
+                println("✅ Sincronização incremental concluída com sucesso!")
+            } else {
+                println("❌ Falha ao sincronizar arquivo.")
+            }
+        }
+
         "--verify-governance" -> {
             val path = args.getOrNull(1) ?: ".env"
             val decision = ChangeGovernance.validateFileWrite(path)
@@ -195,6 +251,8 @@ Uso:
     hermes --rag-status                     # Verifica a saúde e tamanho dos índices RAG
     hermes --query "<termo>" [--scope <s>]   # Busca semântica ultrarrápida via Turbovec
     hermes --deep-search "<q>" --scope <A> [--compare <B>] # DeepSearch híbrida multi-projeto com síntese e anti-loop
+    hermes --research "<tema>" --repos <A>,<B>       # Orquestra 2 agentes paralelos + síntese consolidada
+    hermes --sync-file <arquivo> [--scope <s>]   # Atualização incremental do Turbovec/SQLite
     hermes --verify-watchdog                # Testa o Loop Detector e Watchdog Anti-Travamento
     hermes --verify-governance <arquivo>    # Testa validação de ChangeGovernance
     hermes --exec "<tarefa>"                 # Executa tarefa concorrente com auto-reparo e proteção

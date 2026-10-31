@@ -214,17 +214,27 @@ object DeepSearchEngine {
 
         sb.append("## 2. Evidências no Projeto Primário (`$primaryScope`)\n")
         primaryEvidences.take(5).forEachIndexed { i, ev ->
+            val node = DependencyGraphExpander.expandEvidence(ev)
             sb.append("### [${i + 1}] ${ev.title} (Score: ${String.format("%.3f", ev.rankScore)})\n")
             sb.append("- **Arquivo:** `${ev.path}`\n")
-            sb.append("- **Trecho:** ${ev.content.replace("\n", " ").take(200)}...\n\n")
+            sb.append("- **Trecho:** ${ev.content.replace("\n", " ").take(200)}...\n")
+            if (node.connectedSymbols.isNotEmpty()) {
+                sb.append("- **Grafo de Dependências Conectadas:** `${node.connectedSymbols.take(5).joinToString("`, `")}`\n")
+            }
+            sb.append("\n")
         }
 
         if (secondaryEvidences.isNotEmpty() && secondaryScope != null) {
             sb.append("## 3. Evidências no Projeto Secundário (`$secondaryScope`)\n")
             secondaryEvidences.take(5).forEachIndexed { i, ev ->
+                val node = DependencyGraphExpander.expandEvidence(ev)
                 sb.append("### [${i + 1}] ${ev.title} (Score: ${String.format("%.3f", ev.rankScore)})\n")
                 sb.append("- **Arquivo:** `${ev.path}`\n")
-                sb.append("- **Trecho:** ${ev.content.replace("\n", " ").take(200)}...\n\n")
+                sb.append("- **Trecho:** ${ev.content.replace("\n", " ").take(200)}...\n")
+                if (node.connectedSymbols.isNotEmpty()) {
+                    sb.append("- **Grafo de Dependências Conectadas:** `${node.connectedSymbols.take(5).joinToString("`, `")}`\n")
+                }
+                sb.append("\n")
             }
         }
 
