@@ -2,7 +2,16 @@ package br.com.hermes.rag
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.doubleOrNull
+import kotlinx.serialization.json.longOrNull
 import java.io.File
+import java.net.StandardProtocolFamily
+import java.net.UnixDomainSocketAddress
+import java.nio.ByteBuffer
+import java.nio.channels.SocketChannel
 
 @Serializable
 data class RagResult(
@@ -18,15 +27,23 @@ data class RagResult(
 object TurbovecBridge {
     private val pythonEnv = File("/Users/victorhugo/Downloads/BrProject-Native/.sentinel/venv/bin/python3")
     private val queryScript = File("scripts/ingest/hermes_query.py")
+    private val socketFile = File("/tmp/hermes_rag.sock")
     private val jsonParser = Json { ignoreUnknownKeys = true }
 
     fun isReady(): Boolean {
         val indexFile = File(".hermes/rag/hermes_index.tvim")
         val dbFile = File(".hermes/rag/hermes_map.db")
-        return indexFile.exists() && dbFile.exists() && pythonEnv.exists()
+        return (indexFile.exists() && dbFile.exists() && pythonEnv.exists()) || socketFile.exists()
     }
 
     fun query(text: String, topK: Int = 3, scope: String? = null): List<RagResult> {
+        // 1. Tentar consulta ultrarrápida via Unix Domain Socket (sem cold start de processo)
+        val socketResults = queryViaSocket(text, topK, scope)
+        if (socketResults != null) {
+            return socketResults
+        }
+
+        // 2. Fallback caso o daemon não esteja rodando
         if (!isReady()) return emptyList()
 
         val cmd = mutableListOf(
@@ -48,11 +65,66 @@ object TurbovecBridge {
 
             val output = process.inputStream.bufferedReader().readText()
             process.waitFor()
-
-            // Parse output simplificado ou leitura do SQLite
-            // Aqui fazemos parse das linhas de retorno
             parseQueryOutput(output)
         }.getOrDefault(emptyList())
+    }
+
+    private fun queryViaSocket(text: String, topK: Int, scope: String?): List<RagResult>? {
+        if (!socketFile.exists()) return null
+
+        return runCatching {
+            val address = UnixDomainSocketAddress.of(socketFile.toPath())
+            SocketChannel.open(StandardProtocolFamily.UNIX).use { channel ->
+                channel.connect(address)
+
+                val payload = buildString {
+                    append("{\"query\": ")
+                    append(Json.encodeToString(text))
+                    append(", \"top_k\": ").append(topK)
+                    if (scope != null) {
+                        append(", \"scope\": ").append(Json.encodeToString(scope))
+                    }
+                    append("}")
+                }
+
+                val sendBuffer = ByteBuffer.wrap(payload.toByteArray(Charsets.UTF_8))
+                while (sendBuffer.hasRemaining()) {
+                    channel.write(sendBuffer)
+                }
+
+                // Desligar escrita para sinalizar fim de envio
+                channel.shutdownOutput()
+
+                val receiveBuffer = ByteBuffer.allocate(65536)
+                val outputBytes = mutableListOf<Byte>()
+                while (true) {
+                    val bytesRead = channel.read(receiveBuffer)
+                    if (bytesRead == -1) break
+                    receiveBuffer.flip()
+                    for (i in 0 until bytesRead) {
+                        outputBytes.add(receiveBuffer.get())
+                    }
+                    receiveBuffer.clear()
+                }
+
+                val jsonString = String(outputBytes.toByteArray(), Charsets.UTF_8)
+                val rootJson = jsonParser.parseToJsonElement(jsonString).jsonObject
+                val resultsArray = rootJson["results"]?.jsonArray ?: return null
+
+                resultsArray.map { item ->
+                    val obj = item.jsonObject
+                    RagResult(
+                        score = obj["score"]?.jsonPrimitive?.doubleOrNull ?: 0.0,
+                        id = obj["id"]?.jsonPrimitive?.longOrNull ?: 0L,
+                        scope = obj["scope"]?.jsonPrimitive?.content ?: "general",
+                        title = obj["title"]?.jsonPrimitive?.content ?: "",
+                        path = obj["path"]?.jsonPrimitive?.content ?: "",
+                        content = obj["content"]?.jsonPrimitive?.content ?: "",
+                        ext = obj["ext"]?.jsonPrimitive?.content
+                    )
+                }
+            }
+        }.getOrNull()
     }
 
     private fun parseQueryOutput(rawOutput: String): List<RagResult> {
@@ -63,7 +135,6 @@ object TurbovecBridge {
             val lines = block.trim().lines()
             if (lines.isEmpty() || !lines[0].startsWith("[")) continue
 
-            // [1] Score: 0.6119 | Escopo: skills | brproject-rust-lua-ffi
             val header = lines[0]
             val scoreMatch = Regex("Score:\\s+([0-9.]+)").find(header)
             val scopeMatch = Regex("Escopo:\\s+([a-zA-Z0-9_-]+)").find(header)
