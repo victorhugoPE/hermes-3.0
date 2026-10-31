@@ -16,7 +16,10 @@ Para garantir que o agente não misture regras de diferentes linguagens ou proje
 | `0x10000000 - 0x1FFFFFFF` | **Skills Claude/Maestro** | 285 skills do Claude Opus 5.5 e catálogo do Maestro |
 | `0x20000000 - 0x2FFFFFFF` | **Dossiês Forenses** | Arquitetura UE2, NCSoft, LU4 e Fermata UI |
 | `0x30000000 - 0x3FFFFFFF` | **Código Fonte Client L2** | Funções, structs e assinaturas das crates Rust |
-| `0x40000000 - 0x4FFFFFFF` | **Decisões / Handoffs** | ADRs, sessões anteriores e Proof Bundles |
+| `0x40000000 - 0x4FFFFFFF` | **Interlude DLL Forensics** | Ghidra C e Headers de todas as DLLs C6 |
+| `0x50000000 - 0x5FFFFFFF` | **L2Off C++ Sources** | Vanganth Interlude Extension e NCSOFT C++ |
+| `0x60000000 - 0x6FFFFFFF` | **Emuladores de Servidor** | L2JLucera2, RUSaCis, l2kt (Rede e Handlers) |
+| `0x70000000 - 0x7FFFFFFF` | **Lineage2Elbera** | Client Web, Gateway WebSocket/TCP, UI Silent Dark, Shaders e Tools |
 
 ## 3. Fluxo de Consulta
 ```python

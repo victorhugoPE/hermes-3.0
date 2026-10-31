@@ -212,6 +212,57 @@ def load_l2off_cpp():
                         pass
     return chunks
 
+def load_elbera():
+    elbera_root = "/Users/victorhugo/Documents/elbera/Lineage2Elbera"
+    if not os.path.exists(elbera_root): return []
+
+    chunks = []
+    base_id = 0x70000000
+    c_idx = 0
+
+    valid_exts = (".md", ".ts", ".js", ".html", ".css", ".py", ".sh", ".json", ".toml", ".wgsl")
+    ignore_dirs = {".git", ".sentinel", ".venv", "node_modules", "dist", "build", "__pycache__", "assets", "public"}
+
+    # Prioridade 1: Docs e Manuais (README, progress, docs/)
+    for root, dirs, files in os.walk(elbera_root):
+        dirs[:] = [d for d in dirs if d not in ignore_dirs]
+        for f in sorted(files):
+            ext = os.path.splitext(f)[1]
+            if ext in valid_exts:
+                full_p = os.path.join(root, f)
+                rel_p = os.path.relpath(full_p, elbera_root)
+
+                # Pular arquivos minificados ou dumps pesados
+                size = os.path.getsize(full_p)
+                if size > 1_500_000:
+                    continue
+
+                scope = "elbera-docs" if (rel_p.startswith("docs/") or f.endswith(".md")) else "elbera-code"
+                try:
+                    with open(full_p, "r", encoding="utf-8", errors="ignore") as fl:
+                        snippet = fl.read(1500)
+
+                    if not snippet.strip():
+                        continue
+
+                    title = f"Elbera: {rel_p}"
+                    content = f"Projeto: Lineage2Elbera (Port Web do Interlude)\nArquivo: {rel_p}\nEscopo: {scope}\n{snippet}"
+
+                    chunks.append({
+                        "id": base_id + c_idx,
+                        "scope": scope,
+                        "title": title,
+                        "path": full_p,
+                        "content": content,
+                        "ext": ext,
+                        "size_bytes": size
+                    })
+                    c_idx += 1
+                except:
+                    pass
+
+    return chunks
+
 def load_server_emulators():
     root_servers = "/Users/victorhugo/Downloads/arquivos"
     if not os.path.exists(root_servers): return []
@@ -256,27 +307,31 @@ def main():
     conn = sqlite3.connect(DB_PATH)
     init_db(conn)
 
-    print("📖 [1/5] Coletando Skills do Claude Opus 5.5...")
+    print("📖 [1/6] Coletando Skills do Claude Opus 5.5...")
     skills_chunks = load_skills()
     print(f"   → {len(skills_chunks)} skills preparadas.")
 
-    print("📖 [2/5] Coletando Client L2 (Dossiê + 33 Crates Rust)...")
+    print("📖 [2/6] Coletando Client L2 (Dossiê + 33 Crates Rust)...")
     l2_chunks = load_client_l2_summary()
     print(f"   → {len(l2_chunks)} chunks do Client L2 preparados.")
 
-    print("📖 [3/5] Coletando DLL Forensics (Ghidra C + Headers Interlude C6)...")
+    print("📖 [3/6] Coletando DLL Forensics (Ghidra C + Headers Interlude C6)...")
     dll_chunks = load_dll_forensics()
     print(f"   → {len(dll_chunks)} arquivos forenses de DLLs preparados.")
 
-    print("📖 [4/5] Coletando L2Off C++ (Vanganth Interlude Extender + NCSOFT C++)...")
+    print("📖 [4/6] Coletando L2Off C++ (Vanganth Interlude Extender + NCSOFT C++)...")
     l2off_chunks = load_l2off_cpp()
     print(f"   → {len(l2off_chunks)} arquivos C++ do L2Off preparados.")
 
-    print("📖 [5/5] Coletando Servidores L2 (L2JLucera2, RUSaCis, l2kt)...")
+    print("📖 [5/6] Coletando Servidores L2 (L2JLucera2, RUSaCis, l2kt)...")
     server_chunks = load_server_emulators()
     print(f"   → {len(server_chunks)} arquivos nucleares de servidores preparados.")
 
-    all_chunks = skills_chunks + l2_chunks + dll_chunks + l2off_chunks + server_chunks
+    print("📖 [6/6] Coletando Lineage2Elbera (Web Client, Gateway, UI Silent Dark)...")
+    elbera_chunks = load_elbera()
+    print(f"   → {len(elbera_chunks)} arquivos e docs do Lineage2Elbera preparados.")
+
+    all_chunks = skills_chunks + l2_chunks + dll_chunks + l2off_chunks + server_chunks + elbera_chunks
     total = len(all_chunks)
     print(f"\n🔥 TOTAL CONSOLIDADO PARA INDEXAÇÃO: {total} chunks")
 

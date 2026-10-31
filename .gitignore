@@ -5,6 +5,10 @@ build/
 dist/
 *.class
 *.jar
+.kotlin/
+__pycache__/
+*.pyc
+.hermes/
 
 # IDEs & System
 .idea/

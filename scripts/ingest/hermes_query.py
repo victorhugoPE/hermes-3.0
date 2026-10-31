@@ -127,7 +127,7 @@ def main():
     parser = argparse.ArgumentParser(description="Hermes 3.0 — Turbovec RAG Query")
     parser.add_argument("query", help="Texto da busca (linguagem natural ou termos técnicos)")
     parser.add_argument("--top", type=int, default=5, help="Quantidade de resultados (default: 5)")
-    parser.add_argument("--scope", type=str, default=None, choices=["skills", "client-l2-kb", "client-l2-code", "interlude-dll-forensics", "l2off-cpp", "servers-java-kt"], help="Filtrar por escopo de busca")
+    parser.add_argument("--scope", type=str, default=None, choices=["skills", "client-l2-kb", "client-l2-code", "interlude-dll-forensics", "l2off-cpp", "servers-java-kt", "elbera-docs", "elbera-code"], help="Filtrar por escopo de busca")
     parser.add_argument("--ext", type=str, default=None, help="Filtrar por extensão (.rs, .md, .wgsl)")
     args = parser.parse_args()
 

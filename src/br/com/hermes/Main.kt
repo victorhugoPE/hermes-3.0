@@ -45,6 +45,43 @@ fun main(args: Array<String>) {
             }
         }
 
+        "--deep-search" -> {
+            val queryText = args.getOrNull(1) ?: run {
+                println("❌ Erro: informe a query. Ex: --deep-search \"handshake blowfish\" --scope client-l2-code")
+                return
+            }
+            var primaryScope = "client-l2-code"
+            var secondaryScope: String? = null
+
+            var i = 2
+            while (i < args.size) {
+                when (args[i]) {
+                    "--scope" -> if (i + 1 < args.size) primaryScope = args[++i]
+                    "--compare" -> if (i + 1 < args.size) secondaryScope = args[++i]
+                }
+                i++
+            }
+
+            println("🔬 Executando DeepSearch 2.0 (Turbovec Híbrido + Watchdog Anti-Loop)...")
+            println("   • Query: '$queryText'")
+            println("   • Escopo Primário: $primaryScope")
+            if (secondaryScope != null) println("   • Escopo de Comparação: $secondaryScope")
+
+            val t0 = System.currentTimeMillis()
+            val report = br.com.hermes.search.DeepSearchEngine.runDeepSearch(
+                query = queryText,
+                primaryScope = primaryScope,
+                secondaryScope = secondaryScope,
+                topK = 5
+            )
+            val elapsed = System.currentTimeMillis() - t0
+
+            println("\n" + "=".repeat(70))
+            println(report.markdownSummary)
+            println("=".repeat(70))
+            println("⚡ DeepSearch concluído em ${elapsed}ms com segurança total de ciclo e watchdog.")
+        }
+
         "--verify-governance" -> {
             val path = args.getOrNull(1) ?: ".env"
             val decision = ChangeGovernance.validateFileWrite(path)
@@ -53,6 +90,10 @@ fun main(args: Array<String>) {
 
         "--verify-l2" -> {
             br.com.hermes.project.ProjectVerifier.verifyClientL2()
+        }
+
+        "--verify-elbera" -> {
+            br.com.hermes.project.ProjectVerifier.verifyElbera()
         }
 
         "--simulate-delivery" -> {
@@ -66,6 +107,21 @@ fun main(args: Array<String>) {
             println("   • Status: ${proof.status}")
             println("   • Notas:  ${proof.notes}")
             println("   • Arquivos: ${proof.modifiedFiles}")
+        }
+
+        "--verify-watchdog" -> {
+            println("🛡️ Verificando Loop Detector e Agent Watchdog...")
+            val detector = br.com.hermes.agent.LoopDetector(repetitionThreshold = 3)
+            println("   • Registrando ação 'search(packet)' 1x: ${detector.recordAction("search", "packet")}")
+            println("   • Registrando ação 'search(packet)' 2x: ${detector.recordAction("search", "packet")}")
+            val trip = detector.recordAction("search", "packet")
+            println("   • Registrando ação 'search(packet)' 3x: $trip")
+
+            val watchdog = br.com.hermes.agent.AgentWatchdog(br.com.hermes.agent.AgentBudget(maxSteps = 5))
+            println("   • Watchdog Step 2/5: ${watchdog.check(2)}")
+            println("   • Watchdog Step 4/5 (Warning): ${watchdog.check(4)}")
+            println("   • Watchdog Step 6/5 (Tripped): ${watchdog.check(6)}")
+            println("✅ Loop Detector e Watchdog 100% operacionais!")
         }
 
         "--exec" -> {
@@ -89,6 +145,9 @@ fun main(args: Array<String>) {
                 println("\n🏁 Execução concluída em ${elapsed}ms!")
                 println("   • Worker Responsável: ${result.agentId}")
                 println("   • Sucesso: ${result.success}")
+                if (result.tripReason != null) {
+                    println("   • ⚠️ Motivo do Circuito: ${result.tripReason}")
+                }
                 println("   • Tentativas no TDD Loop: ${result.attempts}")
                 println("   • Contextos RAG Injetados:")
                 result.contextInjected.forEach { println("     $it") }
@@ -135,7 +194,10 @@ private fun printHelp() {
 Uso:
     hermes --rag-status                     # Verifica a saúde e tamanho dos índices RAG
     hermes --query "<termo>" [--scope <s>]   # Busca semântica ultrarrápida via Turbovec
+    hermes --deep-search "<q>" --scope <A> [--compare <B>] # DeepSearch híbrida multi-projeto com síntese e anti-loop
+    hermes --verify-watchdog                # Testa o Loop Detector e Watchdog Anti-Travamento
     hermes --verify-governance <arquivo>    # Testa validação de ChangeGovernance
+    hermes --exec "<tarefa>"                 # Executa tarefa concorrente com auto-reparo e proteção
     hermes --simulate-delivery              # Simula validação de Proof Bundle do Maestro
     """.trimIndent())
 }
