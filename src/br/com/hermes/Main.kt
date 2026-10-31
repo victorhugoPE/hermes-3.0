@@ -138,6 +138,10 @@ fun main(args: Array<String>) {
             }
         }
 
+        "--watch" -> {
+            br.com.hermes.rag.FileWatcherDaemon.startWatching()
+        }
+
         "--verify-governance" -> {
             val path = args.getOrNull(1) ?: ".env"
             val decision = ChangeGovernance.validateFileWrite(path)
@@ -252,6 +256,7 @@ Uso:
     hermes --query "<termo>" [--scope <s>]   # Busca semântica ultrarrápida via Turbovec
     hermes --deep-search "<q>" --scope <A> [--compare <B>] # DeepSearch híbrida multi-projeto com síntese e anti-loop
     hermes --research "<tema>" --repos <A>,<B>       # Orquestra 2 agentes paralelos + síntese consolidada
+    hermes --watch                          # Monitora Client L2 e Elbera sincronizando alteracoes em tempo real
     hermes --sync-file <arquivo> [--scope <s>]   # Atualização incremental do Turbovec/SQLite
     hermes --verify-watchdog                # Testa o Loop Detector e Watchdog Anti-Travamento
     hermes --verify-governance <arquivo>    # Testa validação de ChangeGovernance
