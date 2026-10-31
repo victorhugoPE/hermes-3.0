@@ -25,14 +25,15 @@ data class RagResult(
 )
 
 object TurbovecBridge {
+    private val hermesHome = File("/Users/victorhugo/Documents/hermes-3.0")
     private val pythonEnv = File("/Users/victorhugo/Downloads/BrProject-Native/.sentinel/venv/bin/python3")
-    private val queryScript = File("scripts/ingest/hermes_query.py")
+    private val queryScript = File(hermesHome, "scripts/ingest/hermes_query.py")
     private val socketFile = File("/tmp/hermes_rag.sock")
     private val jsonParser = Json { ignoreUnknownKeys = true }
 
     fun isReady(): Boolean {
-        val indexFile = File(".hermes/rag/hermes_index.tvim")
-        val dbFile = File(".hermes/rag/hermes_map.db")
+        val indexFile = File(hermesHome, ".hermes/rag/hermes_index.tvim")
+        val dbFile = File(hermesHome, ".hermes/rag/hermes_map.db")
         return (indexFile.exists() && dbFile.exists() && pythonEnv.exists()) || socketFile.exists()
     }
 
@@ -92,22 +93,29 @@ object TurbovecBridge {
                     channel.write(sendBuffer)
                 }
 
-                // Desligar escrita para sinalizar fim de envio
-                channel.shutdownOutput()
-
                 val receiveBuffer = ByteBuffer.allocate(65536)
                 val outputBytes = mutableListOf<Byte>()
-                while (true) {
+                val startRead = System.currentTimeMillis()
+
+                while (System.currentTimeMillis() - startRead < 3000) {
                     val bytesRead = channel.read(receiveBuffer)
-                    if (bytesRead == -1) break
-                    receiveBuffer.flip()
-                    for (i in 0 until bytesRead) {
-                        outputBytes.add(receiveBuffer.get())
+                    if (bytesRead > 0) {
+                        receiveBuffer.flip()
+                        for (i in 0 until bytesRead) {
+                            outputBytes.add(receiveBuffer.get())
+                        }
+                        receiveBuffer.clear()
+                        // Se o JSON foi completamente lido e termina com '}', encerra leitura
+                        if (outputBytes.isNotEmpty() && outputBytes.last() == '}'.code.toByte()) {
+                            break
+                        }
+                    } else if (bytesRead == -1) {
+                        break
                     }
-                    receiveBuffer.clear()
                 }
 
                 val jsonString = String(outputBytes.toByteArray(), Charsets.UTF_8)
+                if (!jsonString.trim().startsWith("{")) return null
                 val rootJson = jsonParser.parseToJsonElement(jsonString).jsonObject
                 val resultsArray = rootJson["results"]?.jsonArray ?: return null
 
