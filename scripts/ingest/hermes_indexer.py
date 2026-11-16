@@ -263,6 +263,55 @@ def load_elbera():
 
     return chunks
 
+def load_lu4():
+    lu4_root = "/Users/victorhugo/Documents/cliente-lu4"
+    if not os.path.exists(lu4_root): return []
+
+    chunks = []
+    base_id = 0x70000000
+    c_idx = 0
+    code_exts = {'.rs', '.wgsl', '.toml', '.cs', '.sh'}
+    kb_exts = {'.md', '.json'}
+    skip_dirs = {'target', 'node_modules', '.git', '__pycache__', '.hermes'}
+
+    for dirpath, dirs, filenames in os.walk(lu4_root):
+        dirs[:] = [d for d in dirs if d not in skip_dirs]
+        for f in sorted(filenames):
+            ext = os.path.splitext(f)[1]
+            if ext not in code_exts and ext not in kb_exts:
+                continue
+            full_p = os.path.join(dirpath, f)
+            rel_p = os.path.relpath(full_p, lu4_root)
+            size = os.path.getsize(full_p)
+            if size > 1_500_000:
+                continue
+            try:
+                with open(full_p, "r", encoding="utf-8", errors="ignore") as fl:
+                    snippet = fl.read(1500)
+                if not snippet.strip():
+                    continue
+                if ext in code_exts:
+                    scope = "lu4-code"
+                    title = f"LU4: {rel_p}"
+                    content = f"Projeto: cliente-lu4 (Cliente Rust LU4/UE2 com assets UE5)\nArquivo: {rel_p}\nEscopo: {scope}\n{snippet}"
+                else:
+                    scope = "lu4-kb"
+                    title = f"LU4 KB: {rel_p}"
+                    content = f"Base de Conhecimento LU4: {rel_p}\n{snippet}"
+                chunks.append({
+                    "id": base_id + c_idx,
+                    "scope": scope,
+                    "title": title,
+                    "path": full_p,
+                    "content": content,
+                    "ext": ext,
+                    "size_bytes": size
+                })
+                c_idx += 1
+            except:
+                pass
+    return chunks
+
 def load_server_emulators():
     root_servers = "/Users/victorhugo/Downloads/arquivos"
     if not os.path.exists(root_servers): return []
@@ -331,7 +380,11 @@ def main():
     elbera_chunks = load_elbera()
     print(f"   → {len(elbera_chunks)} arquivos e docs do Lineage2Elbera preparados.")
 
-    all_chunks = skills_chunks + l2_chunks + dll_chunks + l2off_chunks + server_chunks + elbera_chunks
+    print("📖 [7/7] Coletando cliente-lu4 (Crates Rust, apps, manifests, extratores)...")
+    lu4_chunks = load_lu4()
+    print(f"   → {len(lu4_chunks)} arquivos do cliente-lu4 preparados.")
+
+    all_chunks = skills_chunks + l2_chunks + dll_chunks + l2off_chunks + server_chunks + elbera_chunks + lu4_chunks
     total = len(all_chunks)
     print(f"\n🔥 TOTAL CONSOLIDADO PARA INDEXAÇÃO: {total} chunks")
 
