@@ -17,7 +17,12 @@ case "${1:-status}" in
         echo "🚀 Iniciando Hermes RAG Daemon em background..."
         "$PYTHON_ENV" "$DAEMON_SCRIPT" > "$LOG_FILE" 2>&1 &
         disown
-        sleep 2
+        for i in {1..15}; do
+            if [ -S "/tmp/hermes_rag.sock" ]; then
+                break
+            fi
+            sleep 0.5
+        done
         if [ -S "/tmp/hermes_rag.sock" ]; then
             echo "✅ Hermes RAG Daemon ATIVO e aquecido na memória!"
             echo "⚡ Respostas em sub-milissegundos ativadas."
